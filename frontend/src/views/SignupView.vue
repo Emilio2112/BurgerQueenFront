@@ -1,13 +1,19 @@
 <template>
     <div>
-
+        <Signup />
     </div>
 </template>
 
 <script>
-    export default {
-        
+import Signup from "../components/Signup.vue";
+export default {
+    name: "SignupView",
+
+    components: {
+        Signup
     }
+        
+}
 </script>
 
 <style scoped>

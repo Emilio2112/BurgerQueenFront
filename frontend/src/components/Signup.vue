@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        SIGNUP
     </div>
 </template>
 
@@ -11,6 +11,6 @@
     
 </script>
 
-<style scoped>
+<style>
 
 </style>

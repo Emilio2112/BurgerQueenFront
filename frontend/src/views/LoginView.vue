@@ -1,15 +1,19 @@
 <template>
-    <div>
-        
-    </div>
+  <div>
+    <Login />
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import Login from "../components/Login.vue";
+
+export default {
+  name: "LoginView",
+
+  components: {
+    Login,
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
