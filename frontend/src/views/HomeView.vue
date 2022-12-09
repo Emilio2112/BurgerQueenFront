@@ -1,22 +1,15 @@
 <template>
-  <v-app>
-    <v-col >
-      <v-row cols="12"> <nav-bar /></v-row>
-      <v-row> <hello-world /></v-row>
-    </v-col>
-  </v-app>
+  <hello-world />
 </template>
 
 <script>
-import HelloWorld from "../components/HelloWorld.vue";
-import NavBar from "../components/NavBar.vue";
+  import HelloWorld from '../components/HelloWorld'
 
-export default {
-  name: "HomeView",
+  export default {
+    name: 'Home',
 
-  components: {
-    HelloWorld,
-    NavBar,
-  },
-};
+    components: {
+      HelloWorld,
+    },
+  }
 </script>
