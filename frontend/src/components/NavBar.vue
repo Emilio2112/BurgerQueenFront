@@ -1,13 +1,13 @@
 <template>
-  <v-row >
-    <v-app-bar
-      fixed
-      color="white"
-      elevate-on-scroll
-      >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Title</v-toolbar-title>
+  <v-row>
+    <v-app-bar
+      color="#001d3d"
+      app
+      >
+      <v-app-bar-nav-icon class="amber--text text--darken-1" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+
+      <v-toolbar-title class="amber--text text--darken-1">Title</v-toolbar-title>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute top temporary>
       <v-list nav dense>
@@ -40,9 +40,13 @@
 export default {
   data: () => ({
     drawer: false,
-    group: null,
+    group: null
   }),
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.text {
+  color: #ffc300;
+}
+</style>

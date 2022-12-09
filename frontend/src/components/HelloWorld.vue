@@ -1,16 +1,14 @@
 <template>
-  <v-container>
-    <v-app>
-      <v-card >
-        <div class="back">
-          <v-card-title>Burger Queen</v-card-title>
-          <v-card-text>
-            Bienvenidos a la Web de los amantes de las Hamburguesas!!
-          </v-card-text>
-        </div>
-      </v-card>
-    </v-app>
-  </v-container>
+
+    <v-card class="mt-10">
+      <div class="back">
+        <v-card-title>Burger Queen</v-card-title>
+        <v-card-text>
+          Bienvenidos a la Web de los amantes de las Hamburguesas!!
+        </v-card-text>
+      </div>
+    </v-card>
+
 </template>
 
 <script>
@@ -24,7 +22,5 @@ export default {};
   background-repeat: no-repeat;
   color: rgb(250, 225, 4);
   height: 400px;
-  padding-top: 45px;
-  margin-top: 15px;
 }
 </style>

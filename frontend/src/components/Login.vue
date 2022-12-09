@@ -1,16 +1,15 @@
 <template>
-  <div>
-    <v-card width="400px" class="mt-5 mx-a">
-      <v-card-tittle class="pb-0">
+    <v-card width="400px" class="mt-10 mx-a">
+      <v-card-title class="pb-0">
         <h1>Login</h1>
-      </v-card-tittle>
+      </v-card-title>
       <v-card-text>
         <v-form>
-          <v-textfield 
+          <v-text-field 
             label="Email" 
             prepend-icon="mdi-account-circle" 
           />
-          <v-textfield 
+          <v-text-field 
             type="password" 
             label="Email" 
             prepend-icon="mdi-lock"
@@ -25,7 +24,7 @@
         <v-btn color="primary">Login</v-btn>
       </v-card-actions>
     </v-card>
-  </div>
+
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  
     <login-vue />
-  </div>
+
 </template>
 
 <script>
