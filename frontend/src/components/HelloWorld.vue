@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-app>
-      <v-card absolute>
+      <v-card >
         <div class="back">
           <v-card-title>Burger Queen</v-card-title>
           <v-card-text>
@@ -22,7 +22,9 @@ export default {};
   background-image: url("https://www.goiko.com/wp-content/uploads/2017/12/SEVAL_Web_Desktop.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  color: white;
+  color: rgb(250, 225, 4);
   height: 400px;
+  padding-top: 45px;
+  margin-top: 15px;
 }
 </style>

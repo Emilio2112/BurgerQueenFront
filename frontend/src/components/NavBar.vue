@@ -1,11 +1,10 @@
 <template>
-  <v-row>
+  <v-row >
     <v-app-bar
       fixed
       color="white"
       elevate-on-scroll
-      scroll-target="#scrolling-techniques-7"
-    >
+      >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>Title</v-toolbar-title>

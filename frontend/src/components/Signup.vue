@@ -1,16 +1,9 @@
 <template>
-    <div>
-
-    </div>
+  <v-card><h1>Signup zone</h1></v-card>
 </template>
 
 <script>
-    export default {
-        
-    }
-    
+export default {};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
