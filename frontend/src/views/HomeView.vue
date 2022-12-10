@@ -1,22 +1,27 @@
 <template>
   <v-app>
-    <v-col >
-      <v-row cols="12"> <nav-bar /></v-row>
-      <v-row> <hello-world /></v-row>
-    </v-col>
+    <hello-world />
+    <queen-card-vue />
+    <new-burger-vue />
+    <mvb-month-vue />
+
   </v-app>
 </template>
 
 <script>
 import HelloWorld from "../components/HelloWorld.vue";
-import NavBar from "../components/NavBar.vue";
+import QueenCardVue from "../components/QueenCard.vue";
+import NewBurgerVue from "../components/NewBurger.vue";
+import MvbMonthVue from "../components/MvbMonth.vue";
 
 export default {
   name: "HomeView",
 
   components: {
     HelloWorld,
-    NavBar,
+    QueenCardVue,
+    NewBurgerVue,
+    MvbMonthVue  
   },
 };
 </script>
