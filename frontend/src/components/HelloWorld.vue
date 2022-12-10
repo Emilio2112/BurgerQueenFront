@@ -7,6 +7,11 @@
           Bienvenidos a la Web de los amantes de las Hamburguesas!!
         </v-card-text>
       </div>
+<!--    imagen arrow down  
+   <div>
+        <v-img src="https://en.yeniyuzyil.edu.tr/images/gif-bounce-arrow.gif" max-width="50px" position="center"></v-img>
+      </div>
+     -->
     </v-card>
 
 </template>
@@ -20,7 +25,7 @@ export default {};
   background-image: url("https://www.goiko.com/wp-content/uploads/2017/12/SEVAL_Web_Desktop.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  color: rgb(250, 225, 4);
+  color: #ffc300;
   height: 400px;
 }
 </style>
