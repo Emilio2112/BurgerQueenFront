@@ -7,8 +7,8 @@
     rounded
     dark
   >
-    <v-icon color="#FFC300"> mdi-home </v-icon>
-    Home
+    <v-icon color="#FFC300"> mdi-arrow-left</v-icon>
+    Volver
   </v-btn>
 </template>
 

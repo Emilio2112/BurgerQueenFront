@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto">
+  <v-card class="mt-10">
     <v-text-field
       label="Nombre"
       placeholder="Nombre"
@@ -45,12 +45,10 @@
       @click:append="visible = !visible"
     ></v-text-field>
     <v-card-actions>
-      <v-flex>
         <v-btn elevation="2" color="#001D3D" rounded dark>
           <v-icon color="#FFC300"> mdi-check </v-icon>
           Aceptar
         </v-btn>
-      </v-flex>
     </v-card-actions>
   </v-card>
 </template>

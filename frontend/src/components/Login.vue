@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card class="mt-10 ">
     <v-text-field
       label="Email"
       placeholder="Email"
@@ -19,10 +19,12 @@
       :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
       @click:append="visible = !visible"
     ></v-text-field>
+    <v-card-actions>
     <v-btn elevation="2" color="#001D3D" rounded dark>
       <v-icon color="#FFC300"> mdi-check </v-icon>
-      Home
+      Aceptar
     </v-btn>
+  </v-card-actions>
   </v-card>
 </template>
 
