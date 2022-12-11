@@ -20,10 +20,21 @@
       @click:append="visible = !visible"
     ></v-text-field>
     <v-card-actions>
-      <v-btn elevation="2" color="#001D3D" rounded dark>
+      <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark>
         <v-icon color="#FFC300"> mdi-check </v-icon>
         Aceptar
       </v-btn>
+      <v-spacer></v-spacer>
+      <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark>
+        <v-icon color="#FFC300"> mdi-account-outline </v-icon>
+        Nueva Cuenta
+      </v-btn>
+    </v-card-actions>
+    <v-card-actions>
+      <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark>
+    <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
+    Volver
+  </v-btn>
     </v-card-actions>
   </v-card>
 </template>
