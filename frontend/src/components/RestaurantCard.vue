@@ -15,7 +15,9 @@
     <v-card-text class="text--primary">
       <div>{{ restaurant.address }}</div>
 
-      <div>El sitio de las hamburguesas</div>
+      <div>{{ restaurant.phone }}</div>
+
+      <div><a :href="restaurant.web">Visitar restaurante</a></div>
     </v-card-text>
 
     <v-card-actions>
