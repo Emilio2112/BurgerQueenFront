@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div class="down">
-      <button @click="getRestauran">Mostrar restaurantes</button>
+    <div v-for="(restaurant, idx) in restaurants" :key="idx">
+      <RestaurantCard :restaurant="restaurant"></RestaurantCard>
     </div>
-    <div v-for="(restaurant, idx) in restaurants">{{ restaurant.name }}</div>
   </div>
 </template>
 
 <script>
 import restaurant from "../services/restaurant";
+import RestaurantCard from "@/components/RestaurantCard.vue";
 
 export default {
   data() {
@@ -16,12 +16,11 @@ export default {
       restaurants: {},
     };
   },
-  methods: {
-    async getRestauran() {
-      console.log("1");
-      const response = await restaurant.getRestaurants();
-      this.restaurants = response;
-    },
+  async created() {
+    this.restaurants = await restaurant.getRestaurants();
+  },
+  components: {
+    RestaurantCard,
   },
 };
 </script>
