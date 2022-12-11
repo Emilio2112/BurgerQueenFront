@@ -1,21 +1,23 @@
 <template>
-  <v-card class="mt-6 mx-auto" max-width="340">
+  <v-card class="mt-10 mx-auto" max-width="340">
     <v-img
       class="amber--text text--darken-1"
       height="200px"
       src="https://just-eat-prod-eu-res.cloudinary.com/image/upload/c_fill,f_auto,q_auto,w_1200,h_630,d_es:cuisines:hamburguesas-3.jpg/v1/es/restaurants/56273.jpg"
     >
       <div class="back">
-        <v-card-title>Rockabilly Venegas</v-card-title>
+        <v-card-title>{{ restaurant.name }}</v-card-title>
       </div>
     </v-img>
 
-    <v-card-subtitle class="pb-0"> Población </v-card-subtitle>
+    <v-card-subtitle class="pb-0"> {{ restaurant.location }} </v-card-subtitle>
 
     <v-card-text class="text--primary">
-      <div>Dirección</div>
+      <div>{{ restaurant.address }}</div>
 
-      <div>El sitio de las hamburguesas</div>
+      <div>{{ restaurant.phone }}</div>
+
+      <div><a :href="restaurant.web">Visitar restaurante</a></div>
     </v-card-text>
 
     <v-card-actions>
@@ -29,7 +31,14 @@
 </template>
 
 <script>
-export default {};
+
+export default {
+  props: {
+    restaurant: Object
+  }
+
+
+};
 </script>
 
 <style scoped>
