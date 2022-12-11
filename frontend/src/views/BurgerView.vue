@@ -24,7 +24,19 @@
     <v-card-text>
       <v-row class="mx-0"> </v-row>
 
-      <div class="my-4 text-subtitle-1">Rockabilly Venegas</div>
+      <div class="my-4 text-subtitle-1">
+        <v-btn
+      class="mx-1"
+      fab
+      dark
+      small
+      color="amber darken-1"
+    >
+      <v-icon dark>
+        mdi-silverware-fork-knife
+      </v-icon>
+    </v-btn>
+        Rockabilly Venegas</div>
 
       <div>
         Ahumada y picante. Salsa american burger, tomate, chili con carne, bacon
