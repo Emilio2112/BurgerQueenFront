@@ -37,7 +37,7 @@ const routes = [
     path: '/burger',
     name: 'burger',
     component: BurgerView
-  }
+  },
   {
     path: '/ranking',
     name: 'ranking',
