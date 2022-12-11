@@ -29,6 +29,10 @@
           </v-list-item>
 
           <v-list-item>
+            <v-list-item-title><RouterLink :to="{ name: 'restaurant' }"> Restaurantes </RouterLink></v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
             <v-list-item-title><RouterLink :to="{ name: 'login' }"> Login </RouterLink></v-list-item-title>
           </v-list-item>
 

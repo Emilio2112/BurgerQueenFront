@@ -4,7 +4,7 @@
     <queen-card-vue />
     <new-burger-vue />
     <mvb-month-vue />
-    <RestaurantCard />
+<!--     <RestaurantCard /> -->
 
   </v-app>
 </template>
