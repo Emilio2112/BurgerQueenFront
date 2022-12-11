@@ -17,7 +17,7 @@
     <v-text-field
       label="Email"
       placeholder="Email"
-      :rules="passwordRules"
+      :rules="emailRules"
       filled
       rounded
       dense
@@ -45,10 +45,10 @@
       @click:append="visible = !visible"
     ></v-text-field>
     <v-card-actions>
-        <v-btn elevation="2" color="#001D3D" rounded dark>
-          <v-icon color="#FFC300"> mdi-check </v-icon>
-          Aceptar
-        </v-btn>
+      <v-btn elevation="2" color="#001D3D" rounded dark>
+        <v-icon color="#FFC300"> mdi-check </v-icon>
+        Aceptar
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -57,6 +57,12 @@
 export default {
   data() {
     return {
+      emailRules: [
+        (value) => !!value || "Introduce tu email",
+        (value) =>
+          value.match(/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/) ||
+          "Error en el email",
+      ],
       passwordRules: [
         (value) =>
           value.length >= 8 || "El Password debe tener más de 8 caracteres",
