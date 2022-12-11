@@ -8,13 +8,7 @@
     >
       <div class="back">
         <v-card-title>MVB del mes</v-card-title>
-      </div>
-
-    <v-img class="amber--text text--darken-1" height="200px" src="https://content.sinqro.com/49739e7102_bd83d69029_78731592906595KAWAMBA_CANARIAS-44.jpg">
-    <div class="back">
-      <v-card-title>MVB del mes</v-card-title>
-    </div>
-      
+      </div>    
 
     </v-img>
 
