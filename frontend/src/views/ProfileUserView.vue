@@ -7,7 +7,7 @@
     </v-btn>
 
     <br>
-    <v-list-item-title class="text-h5 blue--text text--darken-4" > My crush </v-list-item-title>
+    <v-list-item-title class="text-h5 indigo--text text--darken-4" > My crush </v-list-item-title>
     <br>
 
   <v-card class="mx-auto"  max-width="344" outlined color="#001D3D">
@@ -45,7 +45,7 @@
     </v-card-actions>
   </v-card>
   <br>
-    <v-list-item-title class="text-h5 blue--text text--darken-4" > Mis criticas </v-list-item-title>
+    <v-list-item-title class="text-h5 indigo--text text--darken-4" > Mis criticas </v-list-item-title>
     <br>
     <v-card class="mx-auto"  max-width="344" outlined color="#001D3D">
     <v-list-item three-line>
@@ -65,16 +65,15 @@
     </v-card-actions>
   </v-card>
   <br>
-  <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark>
+  <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1 ml-4" rounded dark>
     <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
     Volver
   </v-btn>
-  <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" flat tile rounded dark>
-    <v-icon color="#FFC300" class="mr-1"> x </v-icon>
+
+  <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1 ml-5" rounded dark>
+    <v-icon color="#FFC300" class="mr-1 ">  mdi-close-octagon-outline </v-icon>
     Eliminar Cuenta
   </v-btn>
-  <br>
-
   </div>
 
 </template>
