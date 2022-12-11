@@ -21,6 +21,11 @@
               ><RouterLink :to="{ name: 'home' }"> Home </RouterLink>
             </v-list-item-title>
           </v-list-item>
+          <v-list-item>
+            <v-list-item-title
+              ><RouterLink :to="{ name: 'profile' }"> Profile </RouterLink>
+            </v-list-item-title>
+          </v-list-item>
 
           <v-list-item>
             <v-list-item-title
@@ -29,11 +34,19 @@
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title><RouterLink :to="{ name: 'login' }"> Login </RouterLink></v-list-item-title>
+            <v-list-item-title
+              ><RouterLink :to="{ name: 'login' }">
+                Login
+              </RouterLink></v-list-item-title
+            >
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title><RouterLink :to="{ name: 'about' }"> About Us </RouterLink></v-list-item-title>
+            <v-list-item-title
+              ><RouterLink :to="{ name: 'about' }">
+                About Us
+              </RouterLink></v-list-item-title
+            >
           </v-list-item>
         </v-list-item-group>
       </v-list>

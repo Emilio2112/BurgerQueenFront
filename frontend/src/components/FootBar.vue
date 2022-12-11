@@ -1,6 +1,6 @@
 <template>
   
-  <v-footer dark padless fixed>
+  <v-footer dark padless >
     <v-card class="flex" flat tile color="#001D3D">
       <v-card-title> 
         <v-btn icon large outlined> <v-icon color="#FFC300"> mdi-email-outline</v-icon></v-btn>
