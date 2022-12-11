@@ -1,34 +1,72 @@
 <template>
-    <v-card width="400px" class="mt-10">
-      <v-card-title class="pb-0">
-        <h1>Signup</h1>
-      </v-card-title>
-      <v-card-text>
-        <v-form>
-          <v-text-field 
-            label="Email" 
-            prepend-icon="mdi-account-circle" 
-          />
-          <v-text-field 
-            type="password" 
-            label="Email" 
-            prepend-icon="mdi-lock"
-            append-icon="mdi-eye-off"
-          />
-        </v-form>
-      </v-card-text>
-      <v-divider/>
-      <v-card-actions>
-        <v-btn color="succes">Register</v-btn>
-        <v-spacer/>
-        <v-btn color="primary">Login</v-btn>
-      </v-card-actions>
-    </v-card>
-
+  <v-card class="mx-auto">
+    <v-text-field
+      label="Nombre"
+      placeholder="Nombre"
+      filled
+      rounded
+      dense
+    ></v-text-field>
+    <v-text-field
+      label="Username"
+      placeholder="Username"
+      filled
+      rounded
+      dense
+    ></v-text-field>
+    <v-text-field
+      label="Email"
+      placeholder="Email"
+      :rules="passwordRules"
+      filled
+      rounded
+      dense
+    ></v-text-field>
+    <v-text-field
+      label="Password"
+      :type="visible ? 'text' : 'password'"
+      :rules="passwordRules"
+      placeholder="Password"
+      filled
+      rounded
+      dense
+      :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
+      @click:append="visible = !visible"
+    ></v-text-field>
+    <v-text-field
+      label="Confirmar Password"
+      :type="visible ? 'text' : 'password'"
+      :rules="passwordRules"
+      placeholder="Password"
+      filled
+      rounded
+      dense
+      :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
+      @click:append="visible = !visible"
+    ></v-text-field>
+    <v-card-actions>
+      <v-flex>
+        <v-btn elevation="2" color="#001D3D" rounded dark>
+          <v-icon color="#FFC300"> mdi-check </v-icon>
+          Aceptar
+        </v-btn>
+      </v-flex>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      passwordRules: [
+        (value) =>
+          value.length >= 8 || "El Password debe tener más de 8 caracteres",
+      ],
+      visible: false,
+    };
+  },
+};
 </script>
 
-<style scoped></style>
+<style></style>
