@@ -3,11 +3,11 @@
   <v-footer dark padless fixed>
     <v-card class="flex" flat tile color="#001D3D">
       <v-card-title class="amber--text text--darken-1"> 
-        <v-btn icon large> <v-icon color="#FFC300"> mdi-email-outline</v-icon></v-btn>
-        Contactanos
+        <v-btn icon large> <v-icon class="amber--text text--darken-1"> mdi-email-outline</v-icon></v-btn>
+        Contáctanos
         <v-spacer></v-spacer>
         <v-btn v-for="icon in icons" :key="icon" class="mx-1" icon>
-          <v-icon size="24px" color="#FFC300">
+          <v-icon size="24px" class="amber--text text--darken-1">
             {{ icon }}
           </v-icon>
         </v-btn>

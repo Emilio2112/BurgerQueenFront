@@ -42,8 +42,7 @@
         color="amber"
         dense
         half-increments
-        readonly
-        size="14"
+        x-large
       ></v-rating>
       <div class="grey--text ms-4">4.5 (413)</div>
     </v-card-text>
