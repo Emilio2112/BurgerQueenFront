@@ -5,6 +5,7 @@ import SignupView from '@/views/SignupView.vue'
 import AboutView from '@/views/AboutView.vue'
 import LoginView from '@/views/LoginView.vue'
 import BurgerView from '@/views/BurgerView.vue'
+import RankingView from '@/views/RankingView.vue'
 
 
 Vue.use(VueRouter)
@@ -36,7 +37,12 @@ const routes = [
     path: '/burger',
     name: 'burger',
     component: BurgerView
-  }
+  },
+  {
+    path: '/ranking',
+    name: 'ranking',
+    component: RankingView
+  },
 
 ]
 
