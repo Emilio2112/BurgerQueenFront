@@ -42,6 +42,9 @@
 </template>
 
 <script>
+import api from '../services/api.js';
+import { useAuthStore } from '../stores/store'
+import { RouterLink } from 'vue-router';
 export default {
   data() {
     return {
