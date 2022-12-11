@@ -23,7 +23,16 @@
 
     <v-card-actions>
       <v-spacer />
-      <v-btn class="amber--text text--darken-1" text> Leer más </v-btn>
+      <v-btn
+        elevation="2"
+        color="#001D3D"
+        class="amber--text text--darken-1"
+        rounded
+        dark
+      >
+        <v-icon color="#FFC300" class="mr-1"> mdi-hamburger</v-icon>
+        leer más
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
