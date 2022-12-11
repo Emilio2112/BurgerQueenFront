@@ -29,16 +29,37 @@
 </template>
 
 <script>
+import api from '../services/api.js';
+import { useAuthStore } from '../stores/store'
+
 export default {
   data() {
     return {
       passwordRules: [
         (value) =>
-          value.length >= 8 || "El Password debe tener más de 8 caracteres",
+          value.length >= 6 || "El Password debe tener más de 6 caracteres",
       ],
       visible: false,
+      user: {
+        email: '',
+        password: ''
+      },
+      store: useAuthStore()
     };
   },
+  methods: {
+    async loginUser() {
+      const data = await api.login(this.user)
+      if (data.error) {
+        alert(data.error)
+      }
+      else {
+        this.store.login(data.token, data.email)
+        this.$router.push({ name: 'home' })
+      }
+    }
+
+  }
 };
 </script>
 
