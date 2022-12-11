@@ -1,5 +1,6 @@
 <template>
   <v-card class="mt-6 mx-auto" max-width="340">
+
     <v-img
       class="amber--text text--darken-1"
       height="200px"
@@ -8,6 +9,13 @@
       <div class="back">
         <v-card-title>MVB del mes</v-card-title>
       </div>
+
+    <v-img class="amber--text text--darken-1" height="200px" src="https://content.sinqro.com/49739e7102_bd83d69029_78731592906595KAWAMBA_CANARIAS-44.jpg">
+    <div class="back">
+      <v-card-title>MVB del mes</v-card-title>
+    </div>
+      
+
     </v-img>
 
     <v-card-subtitle class="pb-0"> Nevada </v-card-subtitle>
