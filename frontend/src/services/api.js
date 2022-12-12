@@ -24,10 +24,12 @@ async function signup(newUser) {
   }
   async function deleteUser(){
     try{
+      console.log("Hola!")
       const {data} = await API.delete('/users/profile')
+      console.log("Adios!")
       return data
     } catch (error){
-      return {error: error.message}
+      return error
     }
   }
 

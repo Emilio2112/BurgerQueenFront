@@ -69,10 +69,10 @@ export default {
      window.history.back();
    },
  async  deleteUser(){
-  await  this.api.deleteUser(this.email)
+  
+  await  api.deleteUser()
   this.$router.push({name:"home"})
    }
- 
 }
 }
 </script>
