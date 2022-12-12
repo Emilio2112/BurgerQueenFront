@@ -11,6 +11,7 @@ import RestaurantsView from '@/views/RestaurantsView.vue'
 import Editar from '@/views/Editar.vue'
 import Delete from '@/views/ConfirmDelete.vue'
 import Despedida from '@/views/Despedida.vue'
+import BurgersView from '@/views/BurgersView.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -64,6 +65,11 @@ const routes = [
     path: '/burger',
     name: 'burger',
     component: BurgerView
+  },
+  {
+    path: '/burgers',
+    name: 'burgers',
+    component: BurgersView
   },
   {
     path: '/ranking',
