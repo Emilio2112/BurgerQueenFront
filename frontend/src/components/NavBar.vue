@@ -23,7 +23,7 @@
           </v-list-item>
           <v-list-item>
             <v-list-item-title
-              ><RouterLink :to="{ name: 'profile' }"> Profile </RouterLink>
+              ><RouterLink :to="{ name: 'profile' }" > Profile </RouterLink>
             </v-list-item-title>
           </v-list-item>
 
@@ -38,7 +38,7 @@
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title><RouterLink :to="{ name: 'login' }"> Login </RouterLink></v-list-item-title>
+            <v-list-item-title><RouterLink :to="{ name: 'login' }" v-if="!store.isLoggedIn"> Login </RouterLink></v-list-item-title>
 
           </v-list-item>
 
@@ -64,11 +64,12 @@
 
 <script>
 import { RouterLink } from "vue-router";
-
+import { useAuthStore } from "@/stores/store";
 export default {
   data: () => ({
     drawer: false,
     group: null,
+    store: useAuthStore()
   }),
   methods: {
     logout() {
