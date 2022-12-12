@@ -49,6 +49,13 @@
               </RouterLink></v-list-item-title
             >
           </v-list-item>
+          <v-list-item>
+            <v-list-item-title
+              ><RouterLink :to="{ name: 'home' }" @click="logout">
+                log out
+              </RouterLink></v-list-item-title
+            >
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -63,6 +70,12 @@ export default {
     drawer: false,
     group: null,
   }),
+  methods: {
+    logout() {
+      this.store.logout()
+      this.$router.push({ name: 'auth' })
+    }
+  },
 };
 </script>
 

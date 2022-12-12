@@ -29,6 +29,7 @@
         class="amber--text text--darken-1 "
         rounded
         dark
+        @click="retroceder()"
       >
         <v-icon color="#FFC300" class="mr-1">
           mdi-close-octagon-outline
@@ -44,7 +45,7 @@
         dark
       >
         <v-icon color="#FFC300" class="mr-1"> mdi-alpha-v-box-outline </v-icon>
-        YES
+        SI
       </v-btn>
       <v-spacer></v-spacer>
     </v-card-actions>
@@ -57,7 +58,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+   retroceder(){
+     window.history.back();
+   },
+
+}
+}
 </script>
 
 <style scoped></style>
