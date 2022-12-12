@@ -3,7 +3,7 @@
     <v-img
       class="amber--text text--darken-1"
       height="200px"
-      src="https://200gramos.com/wp-content/uploads/2022/08/Dara_Vegetal_Burger.webp"
+      :src="burger.photo"
     >
       <div class="back">
         <v-card-title>{{ burger.name }}</v-card-title>
@@ -57,9 +57,7 @@ export default {
     getRestName() {
       const restName = {};
       this.restaurants.filter((el) => {
-        console.log(el);
         if (el._id === this.burger.restaurant.toString()) {
-          console.log(el.name);
           restName.name = el.name;
         }
       });

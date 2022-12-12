@@ -23,7 +23,9 @@
           </v-list-item>
           <v-list-item>
             <v-list-item-title
+
               ><RouterLink :to="{ name: 'ranking' }"> Ranking </RouterLink>
+
             </v-list-item-title>
           </v-list-item>
 

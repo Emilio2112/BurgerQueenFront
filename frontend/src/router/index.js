@@ -48,14 +48,12 @@ const routes = [
   {
     path: '/profile',
     name: 'profile',
-
     component: ProfileUserView
   },
   {
     path: '/signup',
     name: 'signup',
     component: SignupView
-
   },
   {
     path: '/login',
