@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { useAuthStore } from '@/stores/store'
 
 const API = axios.create({
   baseURL: 'http://localhost:3000/api'
@@ -22,19 +23,27 @@ async function signup(newUser) {
     }
   
   }
-  async function deleteUser(){
+  async function deleteUser(remove){
+    const store = useAuthStore()
     try{
-      console.log("Hola!")
-      const {data} = await API.delete('/users/profile')
-      console.log("Adios!")
+      const {data} = await API.delete('/users/profile',remove,{
+        headers:{
+          token: store.token
+        }
+      })
       return data
     } catch (error){
       return error
     }
   }
-  async function updateUser(){
+  async function update(newData){
+    const store = useAuthStore()
     try{
-      const {data} = await API.put('/users/profile')
+      const {data} = await API.put('/users/profile',newData,{
+        headers:{
+          token: store.token
+        }
+      })
       return data
     } catch (error){
       return error
@@ -45,5 +54,5 @@ async function signup(newUser) {
     signup,
     login,
     deleteUser,
-    updateUser
+    update
   }

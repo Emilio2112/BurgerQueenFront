@@ -7,6 +7,7 @@
         filled
         rounded
         dense
+        v-model="newData.username"
       ></v-text-field>
       <v-text-field
         label="Email"
@@ -15,6 +16,8 @@
         filled
         rounded
         dense
+        v-model="newData.email"
+
       ></v-text-field>
       <v-text-field
         label="Password"
@@ -26,6 +29,8 @@
         dense
         :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
         @click:append="visible = !visible"
+        v-model="newData.password"
+
       ></v-text-field>
       <v-text-field
         label="Confirmar Password"
@@ -84,6 +89,11 @@ export default {
           value.length >= 6 || "El Password debe tener más de 6 caracteres",
       ],
       visible: false,
+      newData:{
+        username:"",
+        email:"",
+        password:""
+      }
     };
   },
   methods:{
@@ -92,8 +102,14 @@ export default {
    },
   },
   async  updateUser(){
-  
-  await  api.updateUser()
+    const respond = await  api.update(this.newData)
+    if(respond.error){
+      console.log(respond.error)
+     }else{
+      
+      this.$router.push({name:"profile"})
+     }
+
   this.$router.push({name:"profile"})
    }
 };
