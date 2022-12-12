@@ -13,6 +13,8 @@ import Editar from '@/views/Editar.vue'
 import Delete from '@/views/ConfirmDelete.vue'
 import Despedida from '@/views/Despedida.vue'
 import BurgersView from '@/views/BurgersView.vue'
+import AdminView from '@/views/AdminView.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -29,19 +31,16 @@ const routes = [
   {
     path: '/despedida',
     name: 'despedida',
-
     component: Despedida
   },
   {
     path: '/delete',
     name: 'delete',
-
     component: Delete
   },
   {
     path: '/editar',
     name: 'editar',
-
     component: Editar
   },
   {
@@ -84,6 +83,11 @@ const routes = [
     name: 'restburger',
     component: RestBurgerView,
     props: true
+  },
+  {
+    path: '/admin',
+    name: 'soloadmin',
+    component: AdminView
   }
 
 ]
