@@ -4,6 +4,7 @@
       label="Email"
       placeholder="Email"
       :rules="emailRules"
+      v-model="email"
       filled
       rounded
       dense
@@ -13,6 +14,7 @@
       :type="visible ? 'text' : 'password'"
       :rules="passwordRules"
       placeholder="Password"
+      v-model="password"
       filled
       rounded
       dense
@@ -20,7 +22,7 @@
       @click:append="visible = !visible"
     ></v-text-field>
     <v-card-actions>
-      <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark>
+      <v-btn elevation="2"  color="#001D3D" class="amber--text text--darken-1" rounded dark @click="userLogin">
         <v-icon color="#FFC300"> mdi-check </v-icon>
         Aceptar
       </v-btn>
@@ -43,6 +45,8 @@
 
 <script>
 import { RouterLink } from "vue-router";
+import api from "@/services/api"
+import {useAuthStore} from "@/stores/store";
 export default {
   data() {
     return {
@@ -54,11 +58,32 @@ export default {
       ],
       passwordRules: [
         (value) =>
-          value.length >= 8 || "El Password debe tener más de 8 caracteres",
+          value.length >= 6 || "El Password debe tener más de 6 caracteres",
       ],
       visible: false,
+      email: "",
+      password: "",
+      authStore: useAuthStore()
+
     };
   },
+  methods:{
+     async userLogin(){
+      const user = {
+        email: this.email,
+        password: this.password
+      }
+     const respond =  await api.login(user)
+     if(respond.error){
+      console.log(respond.error)
+     }else{
+      this.authStore.login(respond.token, respond.email)
+     this.$router.push({name:"home"})
+     }
+     }
+    
+  }
+
 };
 </script>
 

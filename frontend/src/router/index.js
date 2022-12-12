@@ -10,7 +10,7 @@ import ProfileUserView from '@/views/ProfileUserView.vue'
 import RestaurantsView from '@/views/RestaurantsView.vue'
 import Editar from '@/views/Editar.vue'
 import Delete from '@/views/ConfirmDelete.vue'
-
+import Despedida from '@/views/Despedida.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -24,6 +24,12 @@ const routes = [
     name: 'about',
 
     component: AboutView
+  },
+  {
+    path: '/despedida',
+    name: 'despedida',
+
+    component: Despedida
   },
   {
     path: '/delete',
