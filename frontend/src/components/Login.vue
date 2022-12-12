@@ -8,6 +8,7 @@
       filled
       rounded
       dense
+      v-model="user.email"
     ></v-text-field>
     <v-text-field
       label="Password"
@@ -20,8 +21,10 @@
       dense
       :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
       @click:append="visible = !visible"
+      v-model="user.password"
     ></v-text-field>
     <v-card-actions>
+
       <v-btn elevation="2"  color="#001D3D" class="amber--text text--darken-1" rounded dark @click="userLogin">
         <v-icon color="#FFC300"> mdi-check </v-icon>
         Aceptar
@@ -44,6 +47,7 @@
 </template>
 
 <script>
+
 import { RouterLink } from "vue-router";
 import api from "@/services/api"
 import {useAuthStore} from "@/stores/store";
@@ -61,6 +65,7 @@ export default {
           value.length >= 6 || "El Password debe tener más de 6 caracteres",
       ],
       visible: false,
+
       email: "",
       password: "",
       authStore: useAuthStore()

@@ -14,7 +14,17 @@ async function getRestaurants () {
   }
 }
 
+async function getRestaurantBurger (id) {
+  try {
+    const response = await API.get(`/restaurants/${id}`)
+    return response.data
+  } catch (error) {
+    return { error: error.message }
+  }
+}
+
 
 export default {
-  getRestaurants
+  getRestaurants,
+  getRestaurantBurger
 }
