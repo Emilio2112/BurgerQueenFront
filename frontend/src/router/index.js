@@ -8,7 +8,7 @@ import BurgerView from '@/views/BurgerView.vue'
 import RankingView from '@/views/RankingView.vue'
 import ProfileUserView from '@/views/ProfileUserView.vue'
 import RestaurantsView from '@/views/RestaurantsView.vue'
-
+import Editar from '@/views/Editar.vue'
 
 
 Vue.use(VueRouter)
@@ -24,6 +24,12 @@ const routes = [
     name: 'about',
 
     component: AboutView
+  },
+  {
+    path: '/editar',
+    name: 'editar',
+
+    component: Editar
   },
   {
     path: '/profile',
