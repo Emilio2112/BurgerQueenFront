@@ -43,6 +43,7 @@
         class="amber--text text--darken-1 "
         rounded
         dark
+        @click="deleteUser()"
       >
         <v-icon color="#FFC300" class="mr-1"> mdi-alpha-v-box-outline </v-icon>
         SI
@@ -58,12 +59,20 @@
 </template>
 
 <script>
+import  api  from "@/services/api";
 export default {
+  data: () => ({
+    api: api()
+  }),
   methods: {
    retroceder(){
      window.history.back();
    },
-
+ async  deleteUser(){
+  await  this.api.deleteUser(this.email)
+  this.$router.push({name:"home"})
+   }
+ 
 }
 }
 </script>

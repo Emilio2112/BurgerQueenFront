@@ -29,14 +29,13 @@
       </v-btn>
       <v-spacer></v-spacer>
       <RouterLink :to="{ name: 'signup' }" style="text-decoration: none;">
-      <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark> <v-icon color="#FFC300"> mdi-account-outline </v-icon>
-         
+      <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark> <v-icon color="#FFC300"> mdi-account-outline </v-icon> 
          Nueva Cuenta
       </v-btn>
     </RouterLink>
     </v-card-actions>
     <v-card-actions>
-      <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark>
+      <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark @click="retroceder()">
     <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
     Volver
   </v-btn>
@@ -66,7 +65,6 @@ export default {
       email: "",
       password: "",
       authStore: useAuthStore()
-
     };
   },
   methods:{
@@ -80,13 +78,15 @@ export default {
       console.log(respond.error)
      }else{
       this.authStore.login(respond.token, respond.email)
-     this.$router.push({name:"home"})
+      this.$router.push({name:"home"})
      }
-     }
-    
+     },
+     retroceder(){
+     window.history.back();
   }
+},
 
-};
+}
 </script>
 
 <style scoped></style>
