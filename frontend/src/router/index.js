@@ -13,6 +13,7 @@ import Editar from '@/views/Editar.vue'
 import Delete from '@/views/ConfirmDelete.vue'
 import Despedida from '@/views/Despedida.vue'
 import BurgersView from '@/views/BurgersView.vue'
+
 import AdminView from '@/views/AdminView.vue'
 
 Vue.use(VueRouter)

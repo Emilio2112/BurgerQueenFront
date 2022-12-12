@@ -22,8 +22,17 @@ async function signup(newUser) {
     }
   
   }
+  async function deleteUser(){
+    try{
+      const {data} = await API.delete('/users/profile')
+      return data
+    } catch (error){
+      return {error: error.message}
+    }
+  }
 
   export default {
     signup,
-    login
+    login,
+    deleteUser
   }
