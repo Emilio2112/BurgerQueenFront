@@ -32,9 +32,18 @@ async function signup(newUser) {
       return error
     }
   }
+  async function updateUser(){
+    try{
+      const {data} = await API.put('/users/profile')
+      return data
+    } catch (error){
+      return error
+    }
+  }
 
   export default {
     signup,
     login,
-    deleteUser
+    deleteUser,
+    updateUser
   }

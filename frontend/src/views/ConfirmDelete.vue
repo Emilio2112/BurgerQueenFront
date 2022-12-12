@@ -71,7 +71,7 @@ export default {
  async  deleteUser(){
   
   await  api.deleteUser()
-  this.$router.push({name:"home"})
+  this.$router.push({name:"despedida"})
    }
 }
 }

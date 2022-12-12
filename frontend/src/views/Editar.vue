@@ -57,6 +57,7 @@
           class="amber--text text--darken-1"
           rounded
           dark
+          @click="retroceder()"
         >
           <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
           Volver
@@ -83,6 +84,11 @@ export default {
       visible: false,
     };
   },
+  methods:{
+    retroceder(){
+     window.history.back();
+   },
+  }
 };
 </script>
 
