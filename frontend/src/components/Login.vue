@@ -22,33 +22,51 @@
       @click:append="visible = !visible"
     ></v-text-field>
     <v-card-actions>
-
-      <v-btn elevation="2"  color="#001D3D" class="amber--text text--darken-1" rounded dark @click="userLogin">
+      <v-btn
+        elevation="2"
+        color="#001D3D"
+        class="amber--text text--darken-1"
+        rounded
+        dark
+        @click="userLogin"
+      >
         <v-icon color="#FFC300"> mdi-check </v-icon>
         Aceptar
       </v-btn>
       <v-spacer></v-spacer>
-      <RouterLink :to="{ name: 'signup' }" style="text-decoration: none;">
-      <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark> <v-icon color="#FFC300"> mdi-account-outline </v-icon>
-         
-         Nueva Cuenta
-      </v-btn>
-    </RouterLink>
+      <RouterLink :to="{ name: 'signup' }" style="text-decoration: none">
+        <v-btn
+          elevation="2"
+          color="#001D3D"
+          class="amber--text text--darken-1"
+          rounded
+          dark
+        >
+          <v-icon color="#FFC300"> mdi-account-outline </v-icon>
+
+          Nueva Cuenta
+        </v-btn>
+      </RouterLink>
     </v-card-actions>
     <v-card-actions>
-      <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark>
-    <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
-    Volver
-  </v-btn>
+      <v-btn
+        elevation="2"
+        color="#001D3D"
+        class="amber--text text--darken-1"
+        rounded
+        dark
+      >
+        <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
+        Volver
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
-
 import { RouterLink } from "vue-router";
-import api from "@/services/api"
-import {useAuthStore} from "@/stores/store";
+import api from "@/services/api";
+import { useAuthStore } from "@/stores/store";
 export default {
   data() {
     return {
@@ -65,27 +83,24 @@ export default {
       visible: false,
       email: "",
       password: "",
-      authStore: useAuthStore()
-
+      authStore: useAuthStore(),
     };
   },
-  methods:{
-     async userLogin(){
+  methods: {
+    async userLogin() {
       const user = {
         email: this.email,
-        password: this.password
+        password: this.password,
+      };
+      const respond = await api.login(user);
+      if (respond.error) {
+        console.log(respond.error);
+      } else {
+        this.authStore.login(respond.token, respond.email);
+        this.$router.push({ name: "home" });
       }
-     const respond =  await api.login(user)
-     if(respond.error){
-      console.log(respond.error)
-     }else{
-      this.authStore.login(respond.token, respond.email)
-     this.$router.push({name:"home"})
-     }
-     }
-    
-  }
-
+    },
+  },
 };
 </script>
 
