@@ -40,7 +40,7 @@ async function signup(newUser) {
   async function update(newData){
     const store = useAuthStore()
     try{
-      const response = await API.put('/users/profile',newData,{
+      const response = await API.post('/users/profile',newData,{
         headers:{
           token: store.token
         }

@@ -88,13 +88,11 @@ export default {
   },
   async updateUser() {
     const respond = await api.update(this.newData);
-    if (respond.error) {
-      console.log(respond.error);
+    if (respond==="error") {
+      console.log("No se pudo actualizar");
     } else {
       this.$router.push({ name: "profile" });
     }
-
-    this.$router.push({ name: "profile" });
   },
 };
 </script>
