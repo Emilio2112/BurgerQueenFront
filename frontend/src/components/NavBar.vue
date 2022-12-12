@@ -23,25 +23,19 @@
           </v-list-item>
           <v-list-item>
             <v-list-item-title
-              ><RouterLink :to="{ name: 'profile' }" > Profile </RouterLink>
+
+              ><RouterLink :to="{ name: 'ranking' }"> Ranking </RouterLink>
+
             </v-list-item-title>
           </v-list-item>
 
           <v-list-item>
             <v-list-item-title
-              ><RouterLink :to="{ name: 'ranking' }"> Ranking </RouterLink>
-            </v-list-item-title>
+              ><RouterLink :to="{ name: 'restaurant' }">
+                Restaurantes
+              </RouterLink></v-list-item-title
+            >
           </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title><RouterLink :to="{ name: 'restaurant' }"> Restaurantes </RouterLink></v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title><RouterLink :to="{ name: 'login' }" v-if="!store.isLoggedIn"> Login </RouterLink></v-list-item-title>
-
-          </v-list-item>
-
           <v-list-item>
             <v-list-item-title
               ><RouterLink :to="{ name: 'about' }">
@@ -49,13 +43,38 @@
               </RouterLink></v-list-item-title
             >
           </v-list-item>
-          <v-list-item>
-            <v-list-item-title
-              ><RouterLink :to="{ name: 'home' }" @click="logout">
-                log out
-              </RouterLink></v-list-item-title
-            >
-          </v-list-item>
+
+          <div v-if="!store.isLoggedIn">
+            <v-list-item>
+              <v-list-item-title
+                ><RouterLink :to="{ name: 'login' }">
+                  Login
+                </RouterLink></v-list-item-title
+              >
+            </v-list-item>
+          </div>
+
+          <div v-if="store.isLoggedIn">
+            <v-list-item>
+              <v-list-item-title
+                ><RouterLink :to="{ name: 'profile' }"> Profile </RouterLink>
+              </v-list-item-title>
+            </v-list-item>
+            <v-divider></v-divider>
+
+            <v-list-item>
+              <v-btn
+                elevation="2"
+                color="#001D3D"
+                class="amber--text text--darken-1"
+                rounded
+                dark
+                @click="logout()"
+              >
+                Log Out
+              </v-btn>
+            </v-list-item>
+          </div>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -69,13 +88,13 @@ export default {
   data: () => ({
     drawer: false,
     group: null,
-    store: useAuthStore()
+    store: useAuthStore(),
   }),
   methods: {
     logout() {
-      this.store.logout()
-      this.$router.push({ name: 'auth' })
-    }
+      this.store.logout();
+      this.$router.push({ name: "home" });
+    },
   },
 };
 </script>
