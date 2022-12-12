@@ -29,7 +29,7 @@
 
           <v-list-item>
             <v-list-item-title
-              ><RouterLink :to="{ name: 'ranking' }"> Ranking </RouterLink>
+              ><RouterLink :to="{ name: 'burgers' }"> Hamburguesas </RouterLink>
             </v-list-item-title>
           </v-list-item>
 
