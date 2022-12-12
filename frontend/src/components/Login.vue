@@ -7,6 +7,7 @@
       filled
       rounded
       dense
+      v-model="user.email"
     ></v-text-field>
     <v-text-field
       label="Password"
@@ -18,6 +19,7 @@
       dense
       :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
       @click:append="visible = !visible"
+      v-model="user.password"
     ></v-text-field>
     <v-card-actions>
       <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark @click.prevent="loginUser()">
@@ -78,7 +80,6 @@ export default {
         this.$router.push({ name: 'home' })
       }
     }
-
   }
 };
 </script>
