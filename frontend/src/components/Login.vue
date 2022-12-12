@@ -8,7 +8,6 @@
       filled
       rounded
       dense
-      v-model="user.email"
     ></v-text-field>
     <v-text-field
       label="Password"
@@ -21,7 +20,6 @@
       dense
       :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
       @click:append="visible = !visible"
-      v-model="user.password"
     ></v-text-field>
     <v-card-actions>
 
@@ -62,10 +60,9 @@ export default {
       ],
       passwordRules: [
         (value) =>
-          value.length >= 6 || "El Password debe tener más de 6 caracteres",
+          value.length >= 6 || "El Password debe tener mÃ¡s de 6 caracteres",
       ],
       visible: false,
-
       email: "",
       password: "",
       authStore: useAuthStore()
