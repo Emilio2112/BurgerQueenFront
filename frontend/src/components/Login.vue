@@ -81,13 +81,6 @@ export default {
         email: this.email,
         password: this.password,
       };
-      const respond = await api.login(user);
-      if (respond.error) {
-        console.log(respond.error);
-      } else {
-        this.authStore.login(respond.token, respond.email);
-        this.$router.push({ name: "home" });
-      }
 
      const respond =  await api.login(user)
      if(respond.error){
