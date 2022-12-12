@@ -65,15 +65,19 @@
     </v-card-actions>
   </v-card>
   <br>
-  <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1 ml-4" rounded dark>
+  <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1 ml-4" rounded dark @click="retroceder()">
     <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
     Volver
   </v-btn>
 
-  <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1 ml-5" rounded dark>
+  <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1 ml-5" rounded dark @click="borrarCuenta()">
     <v-icon color="#FFC300" class="mr-1 ">  mdi-close-octagon-outline </v-icon>
     Eliminar Cuenta
   </v-btn>
+  <br />
+  <br />
+  <br />
+  <br />
   </div>
 
 </template>
@@ -81,7 +85,16 @@
 <script>
 export default {
   name: "Button",
+  methods: {
+   retroceder(){
+     window.history.back();
+   },
+   borrarCuenta(){
+    this.$router.push({name:"delete"})
+   }
+}
 };
+
 </script>
 
 <style scoped></style>

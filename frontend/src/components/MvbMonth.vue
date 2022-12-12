@@ -7,7 +7,10 @@
     >
       <div class="back">
         <v-card-title>MVB del mes</v-card-title>
-      </div>
+
+      </div>    
+
+
     </v-img>
 
     <v-card-subtitle class="pb-0"> Nevada </v-card-subtitle>

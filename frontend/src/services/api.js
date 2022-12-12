@@ -23,9 +23,6 @@ async function signup(newUser) {
   
   }
 
-
-
-
   export default {
     signup,
     login

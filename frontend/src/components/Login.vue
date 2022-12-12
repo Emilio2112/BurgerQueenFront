@@ -4,6 +4,7 @@
       label="Email"
       placeholder="Email"
       :rules="emailRules"
+      v-model="email"
       filled
       rounded
       dense
@@ -14,6 +15,7 @@
       :type="visible ? 'text' : 'password'"
       :rules="passwordRules"
       placeholder="Password"
+      v-model="password"
       filled
       rounded
       dense
@@ -22,7 +24,8 @@
       v-model="user.password"
     ></v-text-field>
     <v-card-actions>
-      <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark @click.prevent="loginUser()">
+
+      <v-btn elevation="2"  color="#001D3D" class="amber--text text--darken-1" rounded dark @click="userLogin">
         <v-icon color="#FFC300"> mdi-check </v-icon>
         Aceptar
       </v-btn>
@@ -44,10 +47,10 @@
 </template>
 
 <script>
-import api from '../services/api.js';
-import { useAuthStore } from '../stores/store'
-import { RouterLink } from 'vue-router';
 
+import { RouterLink } from "vue-router";
+import api from "@/services/api"
+import {useAuthStore} from "@/stores/store";
 export default {
   data() {
     return {
@@ -62,25 +65,30 @@ export default {
           value.length >= 6 || "El Password debe tener más de 6 caracteres",
       ],
       visible: false,
-      user: {
-        email: '',
-        password: ''
-      },
-      store: useAuthStore()
+
+      email: "",
+      password: "",
+      authStore: useAuthStore()
+
     };
   },
-  methods: {
-    async loginUser() {
-      const data = await api.login(this.user)
-      if (data.error) {
-        alert(data.error)
+  methods:{
+     async userLogin(){
+      const user = {
+        email: this.email,
+        password: this.password
       }
-      else {
-        this.store.login(data.token, data.email)
-        this.$router.push({ name: 'home' })
-      }
-    }
+     const respond =  await api.login(user)
+     if(respond.error){
+      console.log(respond.error)
+     }else{
+      this.authStore.login(respond.token, respond.email)
+     this.$router.push({name:"home"})
+     }
+     }
+    
   }
+
 };
 </script>
 
