@@ -74,6 +74,10 @@
     <v-icon color="#FFC300" class="mr-1 ">  mdi-close-octagon-outline </v-icon>
     Eliminar Cuenta
   </v-btn>
+  <br />
+  <br />
+  <br />
+  <br />
   </div>
 
 </template>
