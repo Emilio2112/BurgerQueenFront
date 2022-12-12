@@ -14,7 +14,22 @@ async function getBurgers () {
   }
 }
 
+async function addBurger (newBurger) {
+  const store = useAuthStore()
+  try {
+    const response = await API.post('/burgers', newBurger, {
+      headers: {
+        token: store.userToken
+      }
+    })
+    return response.data
+  } catch (error) {
+    return { error: error.message }
+  }
+}
+
 
 export default {
-  getBurgers
+  getBurgers,
+  addBurger
 }
