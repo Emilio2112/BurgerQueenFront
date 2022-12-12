@@ -9,7 +9,7 @@ import RankingView from '@/views/RankingView.vue'
 import ProfileUserView from '@/views/ProfileUserView.vue'
 import RestaurantsView from '@/views/RestaurantsView.vue'
 import Editar from '@/views/Editar.vue'
-
+import Delete from '@/views/ConfirmDelete.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +24,12 @@ const routes = [
     name: 'about',
 
     component: AboutView
+  },
+  {
+    path: '/delete',
+    name: 'delete',
+
+    component: Delete
   },
   {
     path: '/editar',
