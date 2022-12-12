@@ -9,7 +9,7 @@
     <br>
     <v-list-item-title class="text-h5 indigo--text text--darken-4" > My crush </v-list-item-title>
     <br>
-
+       
   <v-card class="mx-auto"  max-width="344" outlined color="#001D3D">
     <v-list-item three-line>
         <v-list-item-content>
