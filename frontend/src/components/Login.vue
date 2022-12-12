@@ -20,7 +20,7 @@
       @click:append="visible = !visible"
     ></v-text-field>
     <v-card-actions>
-      <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark>
+      <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark @click.prevent="loginUser()">
         <v-icon color="#FFC300"> mdi-check </v-icon>
         Aceptar
       </v-btn>
@@ -45,6 +45,7 @@
 import api from '../services/api.js';
 import { useAuthStore } from '../stores/store'
 import { RouterLink } from 'vue-router';
+
 export default {
   data() {
     return {

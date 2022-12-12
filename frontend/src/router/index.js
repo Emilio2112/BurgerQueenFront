@@ -6,7 +6,7 @@ import AboutView from '@/views/AboutView.vue'
 import LoginView from '@/views/LoginView.vue'
 import BurgerView from '@/views/BurgerView.vue'
 import RankingView from '@/views/RankingView.vue'
-
+import ProfileUserView from '@/views/ProfileUserView.vue'
 import RestaurantsView from '@/views/RestaurantsView.vue'
 
 
