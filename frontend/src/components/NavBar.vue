@@ -16,49 +16,38 @@
           v-model="group"
           active-class="deep-purple--text text--accent-4"
         >
-          <v-list-item>
-            <v-list-item-title
-              ><RouterLink :to="{ name: 'home' }"> Home </RouterLink>
-            </v-list-item-title>
+        <v-list-item>
+            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'home' }">
+              Home</v-btn>
           </v-list-item>
           <v-list-item>
-            <v-list-item-title
-
-              ><RouterLink :to="{ name: 'ranking' }"> Ranking </RouterLink>
-
-            </v-list-item-title>
+            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'ranking' }">
+              Ranking</v-btn>
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title
-              ><RouterLink :to="{ name: 'restaurant' }">
-                Restaurantes
-              </RouterLink></v-list-item-title
-            >
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title
-              ><RouterLink :to="{ name: 'about' }">
-                About Us
-              </RouterLink></v-list-item-title
-            >
+            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'restaurant' }">
+              Restaurantes</v-btn>
           </v-list-item>
 
+          <v-list-item>
+            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'about' }">
+              About Us</v-btn>
+          </v-list-item>
+          
           <div v-if="!store.isLoggedIn">
+
             <v-list-item>
-              <v-list-item-title
-                ><RouterLink :to="{ name: 'login' }">
-                  Login
-                </RouterLink></v-list-item-title
-              >
-            </v-list-item>
+            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'login' }">
+              Login </v-btn>
+          </v-list-item>
+ 
           </div>
 
           <div v-if="store.isLoggedIn">
             <v-list-item>
-              <v-list-item-title
-                ><RouterLink :to="{ name: 'profile' }"> Profile </RouterLink>
-              </v-list-item-title>
+            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'profile' }">
+              Profile  </v-btn>
             </v-list-item>
             <v-divider></v-divider>
 
