@@ -1,6 +1,5 @@
 <template>
   <v-card class="mt-6 mx-auto" max-width="340">
-
     <v-img
       class="amber--text text--darken-1"
       height="200px"
@@ -8,7 +7,9 @@
     >
       <div class="back">
         <v-card-title>MVB del mes</v-card-title>
+
       </div>    
+
 
     </v-img>
 

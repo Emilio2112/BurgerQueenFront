@@ -8,6 +8,7 @@ import BurgerView from '@/views/BurgerView.vue'
 import RankingView from '@/views/RankingView.vue'
 import ProfileUserView from '@/views/ProfileUserView.vue'
 import RestaurantsView from '@/views/RestaurantsView.vue'
+
 import Editar from '@/views/Editar.vue'
 import Delete from '@/views/ConfirmDelete.vue'
 import Despedida from '@/views/Despedida.vue'
@@ -22,7 +23,6 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-
     component: AboutView
   },
   {
@@ -74,6 +74,12 @@ const routes = [
     path: '/restaurant',
     name: 'restaurant',
     component: RestaurantsView
+  },
+  {
+    path: '/restaurant/:id',
+    name: 'restburger',
+    component: RestBurgerView,
+    props: true
   }
 
 ]

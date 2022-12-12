@@ -7,11 +7,6 @@
           Bienvenidos a la Web de los amantes de las Hamburguesas!!
         </v-card-text>
       </div>
-<!--    imagen arrow down  
-   <div>
-        <v-img src="https://en.yeniyuzyil.edu.tr/images/gif-bounce-arrow.gif" max-width="50px" position="center"></v-img>
-      </div>
-     -->
     </v-card>
 
 </template>
