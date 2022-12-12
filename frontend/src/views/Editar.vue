@@ -45,6 +45,7 @@
           class="amber--text text--darken-1"
           rounded
           dark
+          @click="updateUser()"
         >
           <v-icon color="#FFC300"> mdi-check </v-icon>
           Aceptar
@@ -68,6 +69,7 @@
 </template>
 
 <script>
+import api from '@/services/api'
 export default {
   data() {
     return {
@@ -88,7 +90,12 @@ export default {
     retroceder(){
      window.history.back();
    },
-  }
+  },
+  async  updateUser(){
+  
+  await  api.updateUser()
+  this.$router.push({name:"profile"})
+   }
 };
 </script>
 
