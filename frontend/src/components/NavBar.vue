@@ -10,7 +10,7 @@
         >Burger Queen</v-toolbar-title
       >
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" fixed top temporary>
+    <v-navigation-drawer v-model="drawer" fixed top temporary height="fit-content" >
       <v-list nav dense>
         <v-list-item-group
           v-model="group"

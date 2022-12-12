@@ -12,17 +12,14 @@
       <v-text-field
         label="Email"
         placeholder="Email"
-        :rules="emailRules"
         filled
         rounded
         dense
         v-model="newData.email"
-
       ></v-text-field>
       <v-text-field
         label="Password"
         :type="visible ? 'text' : 'password'"
-        :rules="passwordRules"
         placeholder="Password"
         filled
         rounded
@@ -30,12 +27,10 @@
         :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
         @click:append="visible = !visible"
         v-model="newData.password"
-
       ></v-text-field>
       <v-text-field
         label="Confirmar Password"
         :type="visible ? 'text' : 'password'"
-        :rules="passwordRules"
         placeholder="Password"
         filled
         rounded
@@ -74,44 +69,33 @@
 </template>
 
 <script>
-import api from '@/services/api'
+import api from "@/services/api";
 export default {
   data() {
     return {
-      emailRules: [
-        (value) => !!value || "Introduce tu email",
-        (value) =>
-          value.match(/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/) ||
-          "Error en el email",
-      ],
-      passwordRules: [
-        (value) =>
-          value.length >= 6 || "El Password debe tener más de 6 caracteres",
-      ],
       visible: false,
-      newData:{
-        username:"",
-        email:"",
-        password:""
-      }
+      newData: {
+        username: "",
+        email: "",
+        password: "",
+      },
     };
   },
-  methods:{
-    retroceder(){
-     window.history.back();
-   },
+  methods: {
+    retroceder() {
+      window.history.back();
+    },
   },
-  async  updateUser(){
-    const respond = await  api.update(this.newData)
-    if(respond.error){
-      console.log(respond.error)
-     }else{
-      
-      this.$router.push({name:"profile"})
-     }
+  async updateUser() {
+    const respond = await api.update(this.newData);
+    if (respond.error) {
+      console.log(respond.error);
+    } else {
+      this.$router.push({ name: "profile" });
+    }
 
-  this.$router.push({name:"profile"})
-   }
+    this.$router.push({ name: "profile" });
+  },
 };
 </script>
 
