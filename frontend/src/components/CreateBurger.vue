@@ -18,22 +18,18 @@
         :rules="rules"
         v-model="newBurger.restaurant"
       ></v-text-field>
-      <v-text-field
-        label="Estilo"
-        :rules="rules"
-        v-model="newBurger.style"
-      ></v-text-field>
-    <v-textarea
-      name="input"
-      filled
-      label="Descripción"
-      rows="3"
-      auto-grow
-      counter
-      clearable
-      background-color="white"
-      v-model="newBurger.description"
-    ></v-textarea>
+      <v-select :items="items" label="Estilo" v-model="newBurger.style"></v-select>
+      <v-textarea
+        name="input"
+        filled
+        label="Descripción"
+        rows="3"
+        auto-grow
+        counter
+        clearable
+        background-color="white"
+        v-model="newBurger.description"
+      ></v-textarea>
       <v-btn @click.prevent="addNewBurger" @keydown.enter.prevent="addNewBurger"
         >Añadir</v-btn
       >
@@ -47,6 +43,7 @@ import burger from "@/services/burgers";
 export default {
   data() {
     return {
+      items: ["Normal", "Cheese Burger", "Pollo", "Veggie", "Smash", "Gourmet"],
       newBurger: {
         name: "",
         photo: "",
