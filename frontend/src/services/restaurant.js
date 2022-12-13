@@ -18,7 +18,7 @@ async function getRestaurants () {
 
 async function getRestaurantBurger (id) {
   try {
-    const response = await API.get(`/restaurants/${id}`)
+    const response = await API.get(`/restaurants/restaurant/${id}`)
     return response.data
   } catch (error) {
     return { error: error.message }

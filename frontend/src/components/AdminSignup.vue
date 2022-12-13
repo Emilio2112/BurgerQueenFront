@@ -107,7 +107,7 @@
     },
     methods: {
      retroceder(){
-       window.history.back();
+      this.$router.push(-1)
      },
      async signupUser() {
       const response = await api.signup(this.newUser)
