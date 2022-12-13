@@ -45,7 +45,7 @@
           class="amber--text text--darken-1"
           rounded
           dark
-          @click="updateUser()"
+          @click="updateUsers()"
         >
           <v-icon color="#FFC300"> mdi-check </v-icon>
           Aceptar
@@ -86,8 +86,8 @@ export default {
       window.history.back();
     },
   },
-  async updateUser() {
-    const respond = await api.update(this.newData);
+  async updateUsers() {
+    const respond = await api.updateUser(this.newData);
     if (respond==="error") {
       console.log("No se pudo actualizar");
     } else {
