@@ -83,7 +83,7 @@ export default {
   },
   methods: {
     retroceder() {
-      window.history.back();
+      this.$router.push(-1)
     },
     async updateUsers() {
     const respond = await api.updateUser(this.newData);

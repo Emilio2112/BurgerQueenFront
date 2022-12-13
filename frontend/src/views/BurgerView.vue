@@ -100,7 +100,7 @@ export default {
   },
   methods: {
    retroceder(){
-     window.history.back();
+    this.$router.push(-1)
    }
   },
   computed: {
