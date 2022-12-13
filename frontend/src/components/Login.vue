@@ -91,7 +91,7 @@ export default {
 
      },
      retroceder(){
-     window.history.back();
+      this.$router.push(-1)
   }
 },
 
