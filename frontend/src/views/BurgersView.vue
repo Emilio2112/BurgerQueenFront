@@ -15,6 +15,7 @@
       <BurgerCard :burger="burger"></BurgerCard>
     </div>
     <v-card-actions>
+
       <v-btn
         elevation="2"
         color="#001D3D"
@@ -28,6 +29,7 @@
       </v-btn>
     </v-card-actions>
   </v-card>
+
 </template>
 
 <script>
