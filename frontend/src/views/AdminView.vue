@@ -3,6 +3,7 @@
       <CreateRestaurant />
     <UpdateRestaurant />
     <CreateBurger />
+    <AdminSignupVue/>
 </div>
 
 
@@ -12,12 +13,13 @@
 import CreateRestaurant from '@/components/CreateRestaurant.vue';
 import UpdateRestaurant from '@/components/UpdateRestaurant.vue';
 import CreateBurger from '@/components/CreateBurger.vue';
-
+import AdminSignupVue from '@/components/AdminSignup.vue';
   export default {
    components:{
     CreateRestaurant,
     UpdateRestaurant,
-    CreateBurger
+    CreateBurger,
+    AdminSignupVue
    } 
   }
 </script>
