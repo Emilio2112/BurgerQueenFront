@@ -1,7 +1,7 @@
 <template>
   <v-card class="mt-10 mx-auto">
     <v-card-title>Nueva Hamburguesa</v-card-title>
-    <v-col class="mx-auto">
+    <v-col cols="6" class="mt-10 mx-auto">
       <v-text-field
         label="Nombre"
         :rules="rules"
