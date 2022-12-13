@@ -4,6 +4,19 @@
     <div v-for="(burger, idx) in burgers" :key="idx">
       <BurgerCard :burger="burger" />
     </div>
+    <v-card-actions>
+      <v-btn
+        elevation="2"
+        color="#001D3D"
+        class="amber--text text--darken-1 ml-4"
+        rounded
+        dark
+        @click="retroceder()"
+      >
+        <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
+        Volver
+      </v-btn>
+      </v-card-actions>
   </div>
 </template>
 
@@ -23,6 +36,11 @@ export default {
   props: {
     //recibimos el id del restauranta
     id: String,
+  },
+  methods: {
+    retroceder() {
+      window.history.back();
+    },
   },
   async created() {
     //con el id del restaurante llamamos a la api para que 

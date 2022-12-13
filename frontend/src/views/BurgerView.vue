@@ -14,34 +14,28 @@
     ></v-img>
 
     <v-card-title
-      >Red Smoke
+      >{{ burger.name }}
       <v-spacer />
       <v-btn icon color="#FFC300" x-large>
         <v-icon>mdi-heart</v-icon>
       </v-btn>
     </v-card-title>
+    <v-card-subtitle>
+      {{ burger.style }}
+    </v-card-subtitle>
 
     <v-card-text>
       <v-row class="mx-0"> </v-row>
 
       <div class="my-4 text-subtitle-1">
-        <v-btn
-      class="mx-1"
-      fab
-      dark
-      small
-      color="amber darken-1"
-    >
-      <v-icon dark>
-        mdi-silverware-fork-knife
-      </v-icon>
-    </v-btn>
-        Rockabilly Venegas</div>
+        <v-btn class="mx-1" fab dark small color="amber darken-1">
+          <v-icon dark> mdi-silverware-fork-knife </v-icon>
+        </v-btn>
+        {{ getRestName }}
+      </div>
 
       <div>
-        Ahumada y picante. Salsa american burger, tomate, chili con carne, bacon
-        crujiente, cebolla roja y salsa chipotles ahumados Tabasco. La favoríta
-        de Joaquín.
+        {{ burger.description }}
       </div>
     </v-card-text>
 
@@ -63,9 +57,10 @@
       <v-btn
         elevation="2"
         color="#001D3D"
-        class="amber--text text--darken-1"
+        class="amber--text text--darken-1 ml-4"
         rounded
         dark
+        @click="retroceder()"
       >
         <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
         Volver
@@ -86,11 +81,38 @@
 </template>
 
 <script>
+import burger from "@/services/burgers";
+import restaurant from "@/services/restaurant";
+
 export default {
   data() {
     return {
-      visible: false,
+      burger: {},
+      restaurants: [],
     };
+  },
+  async created() {
+    this.burger = await burger.getOneBurger(this.$route.params.id);
+    const result = await restaurant.getRestaurants(
+      this.burger.restaurant.toString()
+    );
+    this.restaurants = result;
+  },
+  methods: {
+   retroceder(){
+     window.history.back();
+   }
+  },
+  computed: {
+    getRestName() {
+      const restName = {};
+      this.restaurants.filter((el) => {
+        if (el._id === this.burger.restaurant.toString()) {
+          restName.name = el.name;
+        }
+      });
+      return restName.name;
+    },
   },
 };
 </script>
