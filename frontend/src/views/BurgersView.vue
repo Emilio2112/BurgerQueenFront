@@ -1,16 +1,16 @@
 <template>
   <v-container>
     <v-row>
-      <v-col v-for="(burger, idx) in burgers" :key="idx" cols="4">
+      <v-col v-for="(burger, idx) in burgers" :key="idx" xs="12" sm="6" lg="4">
         <BurgerCard :burger="burger"></BurgerCard>
       </v-col>
     </v-row>
-    <!-- 
+    
       <v-card-actions>
       <v-btn
         elevation="2"
         color="#001D3D"
-        class="amber--text text--darken-1 ml-4"
+        class="amber--text text--darken-1 ml-4 mt-2"
         rounded
         dark
         @click="retroceder()"
@@ -18,7 +18,7 @@
         <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
         Volver
       </v-btn>
-      </v-card-actions> -->
+      </v-card-actions>
   </v-container>
 </template>
 
