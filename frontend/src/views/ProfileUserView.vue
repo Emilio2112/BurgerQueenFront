@@ -1,7 +1,7 @@
 <template>
   <div>
         {{username}}
-    <v-btn elevation="2" color="#001D3D" class="v-spacer mb-6 amber--text text--darken-1 mt-10 " rounded dark >
+    <v-btn elevation="2" color="#001D3D" class="v-spacer mb-6 amber--text text--darken-1 mt-10 " rounded dark :to="{ name: 'editar' }">
       <v-icon color="#FFD60A0" class="mr-1"> mdi-pencil </v-icon>
       Editar
     </v-btn>

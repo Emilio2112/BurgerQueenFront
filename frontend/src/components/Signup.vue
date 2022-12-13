@@ -6,6 +6,7 @@
       filled
       rounded
       dense
+      v-model="newUser.name"
     ></v-text-field>
     <v-text-field
       label="Username"
@@ -13,6 +14,7 @@
       filled
       rounded
       dense
+      v-model="newUser.username"
     ></v-text-field>
     <v-text-field
       label="Email"
@@ -21,6 +23,7 @@
       filled
       rounded
       dense
+      v-model="newUser.email"
     ></v-text-field>
     <v-text-field
       label="Password"
@@ -32,6 +35,7 @@
       dense
       :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
       @click:append="visible = !visible"
+      v-model="newUser.password"
     ></v-text-field>
     <v-text-field
       label="Confirmar Password"
@@ -51,6 +55,7 @@
         class="amber--text text--darken-1"
         rounded
         dark
+        @click="signupUser()"
       >
         <v-icon color="#FFC300"> mdi-check </v-icon>
         Aceptar
@@ -73,6 +78,9 @@
 </template>
 
 <script>
+import { useAuthStore } from '@/stores/store';
+import api from '@/services/api.js'
+
 export default {
   data() {
     return {
@@ -84,15 +92,31 @@ export default {
       ],
       passwordRules: [
         (value) =>
-          value.length >= 8 || "El Password debe tener más de 8 caracteres",
+          value.length >= 6 || "El Password debe tener más de 6 caracteres",
       ],
       visible: false,
+      newUser: {
+      name: "",
+      username: "",
+      email: "",
+      password: ""
+    },
+    authStore: useAuthStore()
     };
   },
   methods: {
    retroceder(){
      window.history.back();
    },
+   async signupUser() {
+    const response = await api.signup(this.newUser)
+    if (response.error) {
+      alert("Error al crear cuenta")
+    } else {
+      this.authStore.login(response.token, response.email)
+      this.$router.push({name: 'home'})
+    }
+   }
 }
 
 };
