@@ -13,12 +13,24 @@
         :rules="rules"
         v-model="newBurger.photo"
       ></v-text-field>
-      <v-text-field
+<!--       <v-text-field
         label="Restaurante"
         :rules="rules"
         v-model="newBurger.restaurant"
-      ></v-text-field>
-      <v-select :items="items" label="Estilo" v-model="newBurger.style"></v-select>
+      >
+      </v-text-field> -->
+      <v-select
+        :items="getName"
+        label="Restaurante"
+        v-model="newBurger.restaurant"
+
+      >
+      </v-select>
+      <v-select
+        :items="items"
+        label="Estilo"
+        v-model="newBurger.style"
+      ></v-select>
       <v-textarea
         name="input"
         filled
@@ -39,6 +51,7 @@
 
 <script>
 import burger from "@/services/burgers";
+import restaurant from "@/services/restaurant";
 
 export default {
   data() {
@@ -51,6 +64,7 @@ export default {
         style: "",
         description: "",
       },
+      restaurants: [],
       rules: [
         (value) => !!value || "Required.",
         (value) => (value && value.length >= 3) || "Min 3 characters",
@@ -59,6 +73,12 @@ export default {
   },
   methods: {
     async addNewBurger() {
+        this.restaurants.filter(el =>{
+         if(el.name === this.newBurger.restaurant) {
+          this.newBurger.restaurant = el.id
+          //return this.newBurger
+         } 
+        })
       const response = await burger.addBurger(this.newBurger);
       if (response === "error") {
         alert("Error creating burger");
@@ -67,6 +87,27 @@ export default {
       }
     },
   },
+  async created() {
+    const result = await restaurant.getRestaurants();
+    //this.restaurants = result;
+    result.map((el) => {
+      const rest = {};
+      rest.name = el.name;
+      rest.id = el._id;
+      this.restaurants.push(rest);
+    });
+    console.log(this.restaurants);
+  },
+  computed: {
+    getName (){
+      const name = []
+      this.restaurants.map(el => {
+        name.push(el.name)
+      })
+      return name
+    }
+  }
+
 };
 </script>
 
