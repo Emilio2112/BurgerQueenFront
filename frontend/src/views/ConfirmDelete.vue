@@ -66,7 +66,7 @@ export default {
   }),
   methods: {
    retroceder(){
-    this.$router.push(-1)
+    this.$router.go(-1)
    },
  async  deleteUser(){
   

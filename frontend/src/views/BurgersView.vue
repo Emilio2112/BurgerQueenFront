@@ -16,10 +16,11 @@
     </div>
     <v-card-actions>
 
+
       <v-btn
         elevation="2"
         color="#001D3D"
-        class="amber--text text--darken-1 ml-4"
+        class="amber--text text--darken-1 ml-4 mt-2"
         rounded
         dark
         @click="retroceder()"
@@ -27,8 +28,10 @@
         <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
         Volver
       </v-btn>
+
     </v-card-actions>
   </v-card>
+
 
 </template>
 
@@ -58,7 +61,7 @@ export default {
   },
   methods: {
     retroceder() {
-      this.$router.push(-1)
+      this.$router.go(-1)
     },
   },
 };
