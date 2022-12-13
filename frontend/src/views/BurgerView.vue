@@ -98,6 +98,11 @@ export default {
     );
     this.restaurants = result;
   },
+  methods: {
+   retroceder(){
+     window.history.back();
+   }
+  },
   computed: {
     getRestName() {
       const restName = {};
