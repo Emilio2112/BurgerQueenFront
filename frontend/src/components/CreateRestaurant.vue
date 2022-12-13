@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     async addNewRest() {
-      const response = await restaurant.addRestaurant();
+      const response = await restaurant.addRestaurant(this.newRestaurant);
       if (response === "error") {
         alert("Error creating ship");
       } else {
