@@ -1,8 +1,11 @@
 <template>
-    <v-card>
-      <div v-for="(burger, idx) in burgers" :key="idx">
+  <v-container>
+    <v-row>
+      <v-col v-for="(burger, idx) in burgers" :key="idx" cols="4">
         <BurgerCard :burger="burger"></BurgerCard>
-      </div>
+      </v-col>
+    </v-row>
+    <!-- 
       <v-card-actions>
       <v-btn
         elevation="2"
@@ -15,8 +18,8 @@
         <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
         Volver
       </v-btn>
-      </v-card-actions>
-    </v-card>
+      </v-card-actions> -->
+  </v-container>
 </template>
 
 <script>
