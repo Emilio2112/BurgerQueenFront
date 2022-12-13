@@ -114,7 +114,6 @@
       if (response.error) {
         alert("Error al crear cuenta")
       } else {
-        this.authStore.login(response.token, response.email)
         this.$router.push({name: 'home'})
       }
      }
