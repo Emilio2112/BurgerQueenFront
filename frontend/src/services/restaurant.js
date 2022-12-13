@@ -30,7 +30,7 @@ async function addRestaurant (newRestaurant) {
   try {
     const response = await API.post('/restaurants', newRestaurant, {
       headers: {
-        token: store.userToken
+        token: store.token
       }
     })
     return response.data

@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     async addNewRest() {
-      const response = await restaurant.addRestaurant(this.newRestaurant);
+      const response = await restaurant.addRestaurant();
       if (response === "error") {
         alert("Error creating ship");
       } else {
