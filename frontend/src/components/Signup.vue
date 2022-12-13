@@ -106,7 +106,7 @@ export default {
   },
   methods: {
    retroceder(){
-    this.$router.push(-1)
+    this.$router.go(-1)
    },
    async signupUser() {
     const response = await api.signup(this.newUser)
