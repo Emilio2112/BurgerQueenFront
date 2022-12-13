@@ -1,12 +1,22 @@
 <template>
-  <v-container>
+  <v-card>
     <v-row>
-      <v-col v-for="(burger, idx) in burgers" :key="idx" xs="12" sm="6" lg="4">
-        <BurgerCard :burger="burger"></BurgerCard>
+      <v-col cols="12" sm="10" md="8">
+        <v-sheet elevation="10" class="py-4 px-1">
+          <v-chip-group mandatory active-class="primary--text">
+            <v-chip v-for="tag in tags" :key="tag">
+              {{ tag }}
+            </v-chip>
+          </v-chip-group>
+        </v-sheet>
       </v-col>
     </v-row>
-    
-      <v-card-actions>
+    <div v-for="(burger, idx) in burgers" :key="idx">
+      <BurgerCard :burger="burger"></BurgerCard>
+    </div>
+    <v-card-actions>
+
+
       <v-btn
         elevation="2"
         color="#001D3D"
@@ -18,8 +28,11 @@
         <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
         Volver
       </v-btn>
-      </v-card-actions>
-  </v-container>
+
+    </v-card-actions>
+  </v-card>
+
+
 </template>
 
 <script>
@@ -30,6 +43,14 @@ export default {
   data() {
     return {
       burgers: {},
+      tags: [
+        "Normal",
+        "Cheese Burger",
+        "Pollo",
+        "Veggie",
+        "Smash",
+        "Gourmet"
+      ],
     };
   },
   async created() {
@@ -40,7 +61,7 @@ export default {
   },
   methods: {
     retroceder() {
-      window.history.back();
+      this.$router.push(-1)
     },
   },
 };
