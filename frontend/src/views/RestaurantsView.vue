@@ -1,6 +1,8 @@
 <template>
   <div>
+    <!-- Creo las tarjetas de todos los restaurantes con el v-for -->
     <div v-for="(restaurant, idx) in restaurants" :key="idx">
+      <!-- Cada restaurante cogera solo su propia info que pasamos por props -->
       <RestaurantCard :restaurant="restaurant"></RestaurantCard>
     </div>
     <v-card-actions>
@@ -30,6 +32,7 @@ export default {
     };
   },
   async created() {
+    // nos traemos todos los restaurantes
     this.restaurants = await restaurant.getRestaurants();
   },
   components: {

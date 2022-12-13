@@ -50,12 +50,15 @@ export default {
     async addNewRest() {
       const response = await restaurant.addRestaurant(this.newRestaurant);
       if (response === "error") {
-        alert("Error");
+
+        alert("Error creating Restaurant");
+
       } else {
         this.$router.push({ name: "restaurant" });
       }
     },
   },
+
 };
 </script>
 

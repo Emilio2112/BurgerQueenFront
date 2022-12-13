@@ -22,6 +22,7 @@
 
     <v-card-actions>
       <v-spacer />
+      <!-- Hacemos que el link coja directamente el id del restaurante -->
       <RouterLink :to="{ path: `/restaurant/${restaurant._id.toString()}` }" style="text-decoration: none;">
         <v-btn
           elevation="2"
@@ -42,6 +43,7 @@
 import { RouterLink } from "vue-router";
 export default {
   props: {
+    //nos traemos los restaurantes desde RestaurantsView
     restaurant: Object,
   },
 };
