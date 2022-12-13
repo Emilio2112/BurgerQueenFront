@@ -33,6 +33,7 @@ async function signup(newUser) {
           token: store.token
         }
       })
+      store.logout()
       return response.data
     } catch (error){
       return error
