@@ -43,7 +43,12 @@
           </v-list-item>
  
           </div>
-
+          <div v-if="store.isLoggedIn">
+            <v-list-item>
+            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'soloadmin' }">
+              Admin  </v-btn>
+            </v-list-item>
+          </div>
           <div v-if="store.isLoggedIn">
             <v-list-item>
             <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'profile' }">
