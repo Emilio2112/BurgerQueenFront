@@ -21,8 +21,8 @@
               Home</v-btn>
           </v-list-item>
           <v-list-item>
-            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'ranking' }">
-              Ranking</v-btn>
+            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'burgers' }">
+              Hamburguesas</v-btn>
           </v-list-item>
 
           <v-list-item>
@@ -43,7 +43,12 @@
           </v-list-item>
  
           </div>
-
+          <div v-if="store.isLoggedIn">
+            <v-list-item>
+            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'soloadmin' }">
+              Admin  </v-btn>
+            </v-list-item>
+          </div>
           <div v-if="store.isLoggedIn">
             <v-list-item>
             <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'profile' }">
