@@ -1,17 +1,21 @@
 <template>
-  <div>
-    <CreateRestaurant />
-    <CreateBurger />
-  </div>
+<div>
+      <CreateRestaurant />
+    <UpdateRestaurant />
+</div>
+
+
 </template>
 
 <script>
 import CreateRestaurant from '@/components/CreateRestaurant.vue';
+import UpdateRestaurant from '@/components/UpdateRestaurant.vue';
 import CreateBurger from '@/components/CreateBurger.vue';
 
   export default {
    components:{
     CreateRestaurant,
+    UpdateRestaurant,
     CreateBurger
    } 
   }
