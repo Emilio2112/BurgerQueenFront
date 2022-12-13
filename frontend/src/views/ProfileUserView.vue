@@ -87,7 +87,7 @@ export default {
   name: "Button",
   methods: {
    retroceder(){
-    this.$router.push(-1)
+    this.$router.go(-1)
    },
    borrarCuenta(){
     this.$router.push({name:"delete"})

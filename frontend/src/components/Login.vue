@@ -91,7 +91,7 @@ export default {
 
      },
      retroceder(){
-      this.$router.push(-1)
+      this.$router.go(-1)
   }
 },
 
