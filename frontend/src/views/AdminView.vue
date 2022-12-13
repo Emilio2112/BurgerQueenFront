@@ -1,29 +1,25 @@
 <template>
-<div>
-      <CreateRestaurant />
+  <div>
+    <CreateRestaurant />
     <UpdateRestaurant />
     <CreateBurger />
-    <AdminSignupVue/>
-</div>
-
-
+    <AdminSignupVue />
+  </div>
 </template>
 
 <script>
-import CreateRestaurant from '@/components/CreateRestaurant.vue';
-import UpdateRestaurant from '@/components/UpdateRestaurant.vue';
-import CreateBurger from '@/components/CreateBurger.vue';
-import AdminSignupVue from '@/components/AdminSignup.vue';
-  export default {
-   components:{
+import CreateRestaurant from "@/components/CreateRestaurant.vue";
+import UpdateRestaurant from "@/components/UpdateRestaurant.vue";
+import CreateBurger from "@/components/CreateBurger.vue";
+import AdminSignupVue from "@/components/AdminSignup.vue";
+export default {
+  components: {
     CreateRestaurant,
     UpdateRestaurant,
     CreateBurger,
-    AdminSignupVue
-   } 
-  }
+    AdminSignupVue,
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
