@@ -1,15 +1,20 @@
 <template>
+<div>
+      <CreateRestaurant />
+    <UpdateRestaurant />
+</div>
 
-    <CreateRestaurant />
 
 </template>
 
 <script>
 import CreateRestaurant from '@/components/CreateRestaurant.vue';
+import UpdateRestaurant from '@/components/UpdateRestaurant.vue';
 
   export default {
    components:{
-    CreateRestaurant
+    CreateRestaurant,
+    UpdateRestaurant
    } 
   }
 </script>

@@ -29,7 +29,7 @@ async function addRestaurant (newRestaurant) {
   try {
     const response = await API.post('/restaurants', newRestaurant, {
       headers: {
-        token: store.userToken
+        token: store.token,
       }
     })
     return response.data
@@ -38,9 +38,23 @@ async function addRestaurant (newRestaurant) {
   }
 }
 
+async function updateRestaurant (newData) {
+  const store = useAuthStore()
+  try {
+    const response = await API.put('/restaurants', newData, {
+      headers: {
+        token: store.token,
+      }
+    })
+    return response.data
+  } catch (error) {
+    return { error: error.message }
+  }
+}
 
 export default {
   getRestaurants,
   getRestaurantBurger,
-  addRestaurant
+  addRestaurant,
+  updateRestaurant
 }
