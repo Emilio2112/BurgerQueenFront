@@ -60,7 +60,7 @@ const routes = [
     component: LoginView
   },
   {
-    path: '/burger',
+    path: '/burger/:id',
     name: 'burger',
     component: BurgerView
   },

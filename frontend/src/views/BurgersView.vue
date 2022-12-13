@@ -3,6 +3,7 @@
       <div v-for="(burger, idx) in burgers" :key="idx">
         <BurgerCard :burger="burger"></BurgerCard>
       </div>
+      
     </v-card>
   </template>
   
