@@ -1,37 +1,45 @@
-import axios from 'axios'
-import { useAuthStore } from '../stores/store'
+import axios from "axios";
+import { useAuthStore } from "../stores/store";
 
 const API = axios.create({
-  baseURL: 'http://localhost:3000/api',
-  headers: {token: localStorage.getItem('token')}
-})
+  baseURL: "http://localhost:3000/api",
+  headers: { token: localStorage.getItem("token") },
+});
 
-
-async function getBurgers () {
+async function getBurgers() {
   try {
-    const response = await API.get('/burgers')
-    return response.data
+    const response = await API.get("/burgers");
+    return response.data;
   } catch (error) {
-    return { error: error.message }
+    return { error: error.message };
   }
 }
 
-async function addBurger (newBurger) {
-  const store = useAuthStore()
+async function addBurger(newBurger) {
+  const store = useAuthStore();
   try {
-    const response = await API.post('/burgers', newBurger, {
+    const response = await API.post("/burgers", newBurger, {
       headers: {
-        token: store.token
-      }
-    })
-    return response.data
+        token: store.token,
+      },
+    });
+    return response.data;
   } catch (error) {
-    return { error: error.message }
+    return { error: error.message };
   }
 }
 
+async function getOneBurger(id) {
+  try {
+    const response = await API.get(`/burgers/${id}`);
+    return response.data;
+  } catch (error) {
+    return { error: error.message };
+  }
+}
 
 export default {
   getBurgers,
-  addBurger
-}
+  addBurger,
+  getOneBurger
+};

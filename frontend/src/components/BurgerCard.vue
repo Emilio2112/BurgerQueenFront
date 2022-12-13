@@ -22,6 +22,7 @@
 
     <v-card-actions>
       <v-spacer />
+      <RouterLink :to="{ path: `/burger/${burger._id.toString()}` }" style="text-decoration: none;">
       <v-btn
         elevation="2"
         color="#001D3D"
@@ -31,12 +32,13 @@
       >
         <v-icon color="#FFC300" class="mr-1"> mdi-hamburger</v-icon>
         leer más
-      </v-btn>
+      </v-btn></RouterLink>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
+import { RouterLink } from "vue-router";
 import restaurant from "@/services/restaurant";
 export default {
   data() {
