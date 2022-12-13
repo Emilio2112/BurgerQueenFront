@@ -21,7 +21,7 @@ async function addBurger (newBurger) {
   try {
     const response = await API.post('/burgers', newBurger, {
       headers: {
-        token: store.userToken
+        token: store.token
       }
     })
     return response.data

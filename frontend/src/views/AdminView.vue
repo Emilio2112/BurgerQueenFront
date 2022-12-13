@@ -2,6 +2,7 @@
 <div>
       <CreateRestaurant />
     <UpdateRestaurant />
+    <CreateBurger />
 </div>
 
 
