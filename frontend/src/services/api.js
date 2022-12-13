@@ -3,7 +3,8 @@ import { useAuthStore } from '@/stores/store'
 
 
 const API = axios.create({
-  baseURL: 'http://localhost:3000/api'
+  baseURL: 'http://localhost:3000/api',
+  headers: {token: localStorage.getItem('token')}
 })
 
 async function signup(newUser) {
@@ -32,15 +33,16 @@ async function signup(newUser) {
           token: store.token
         }
       })
+      store.logout()
       return response.data
     } catch (error){
       return error
     }
   }
-  async function update(newData){
+  async function updateUser(newData){
     const store = useAuthStore()
     try{
-      const response = await API.post('/users/profile',newData,{
+      const response = await API.put('/users/profile',newData,{
         headers:{
           token: store.token
         }
@@ -55,5 +57,5 @@ async function signup(newUser) {
     signup,
     login,
     deleteUser,
-    update
+    updateUser
   }
