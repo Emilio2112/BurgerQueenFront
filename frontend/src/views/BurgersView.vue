@@ -39,6 +39,7 @@
 import burger from "../services/burgers";
 import BurgerCard from "@/components/BurgerCard.vue";
 
+
 export default {
   data() {
     return {

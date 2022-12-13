@@ -22,7 +22,7 @@
 
 <script>
 import restaurant from "@/services/restaurant";
-import BurgerCard from "@/components/BurgerRestaurant.vue";
+import BurgerCard from "@/components/BurgerCard.vue";
 
 export default {
   components: {
@@ -30,7 +30,7 @@ export default {
   },
   data() {
     return {
-      burgers: [],
+      burgers: {},
     };
   },
   props: {
