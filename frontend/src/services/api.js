@@ -53,9 +53,24 @@ async function signup(newUser) {
     }
   }
 
+  async function getUser(){
+    const store = useAuthStore()
+    try{
+      const response = await API.get('/users/profile',{
+        headers:{
+          token: store.token
+        }
+      })
+      return response.data
+    } catch (error){
+      return error
+    }
+  }
+
   export default {
     signup,
     login,
     deleteUser,
-    updateUser
+    updateUser,
+    getUser
   }

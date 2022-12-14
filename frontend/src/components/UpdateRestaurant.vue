@@ -13,12 +13,17 @@
       label="Localidad"
       v-model="newRestaurant.location"
     ></v-text-field>
-    <v-text-field
-      label="Teléfono"
-      v-model="newRestaurant.phone"
-    ></v-text-field>
-    <v-btn @click.prevent="upRestaurant" @keydown.enter.prevent="upRestaurant">Actualizar</v-btn>
-  
+    <v-text-field label="Teléfono" v-model="newRestaurant.phone"></v-text-field>
+    <v-btn
+      elevation="2"
+      color="#001D3D"
+      class="amber--text text--darken-1"
+      rounded
+      dark
+      @click.prevent="upRestaurant"
+      @keydown.enter.prevent="upRestaurant"
+      >Actualizar</v-btn
+    >
   </v-col>
 </template>
 
