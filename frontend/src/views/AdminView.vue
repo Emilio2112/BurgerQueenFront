@@ -38,7 +38,7 @@
                   </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item @click.prevent="setUpRest()">
+    <!--             <v-list-item @click.prevent="setUpRest()">
                   <v-list-item-icon>
                     <v-icon>mdi-home-edit-outline</v-icon>
                   </v-list-item-icon>
@@ -47,7 +47,7 @@
                       >Actualizar Restaurante</v-list-item-title
                     >
                   </v-list-item-content>
-                </v-list-item>
+                </v-list-item> -->
 
                 <v-list-item @click.prevent="setBurger()">
                   <v-list-item-icon>
@@ -73,7 +73,7 @@
       </v-col>
       <AdminHome v-if="home" />
       <CreateRestaurant v-if="restaurant" />
-      <UpdateRestaurant v-if="updateRest" />
+     <!--  <UpdateRestaurant v-if="updateRest" /> -->
       <CreateBurger v-if="burger" />
       <AdminSignupVue v-if="admin" />
     </v-row>

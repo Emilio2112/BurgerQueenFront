@@ -39,6 +39,11 @@
       background-color="white"
       v-model="newBurger.description"
     ></v-textarea>
+    <v-text-field
+      name="input"
+      label="Rating"
+      v-model="newBurger.rating"
+    ></v-text-field>
     <v-btn
       elevation="2"
       color="#001D3D"
@@ -66,6 +71,7 @@ export default {
         restaurant: "",
         style: "",
         description: "",
+        rating: "",
       },
       restaurants: [],
       rules: [
