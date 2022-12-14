@@ -9,7 +9,7 @@
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title class="text-h6">
-                    John Leider
+                    {{user}}
                   </v-list-item-title>
                   <v-list-item-subtitle
                     >{{email}}</v-list-item-subtitle
@@ -149,8 +149,9 @@ export default {
   },
   async created() {
     this.email = this.store.email
-    const user = await api.getUser(this.store.token)
-    console.log(user)
+    const userA = await api.getUser(this.store.token)
+    console.log(userA)
+    this.user = userA.name
     
   }
 };
