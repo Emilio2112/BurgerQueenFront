@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useAuthStore } from '../stores/store'
 
 const API = axios.create({
-  baseURL: 'https://burguerqueen.onrender.com/api',
+  baseURL: 'http://localhost:3000/api',
   headers: {token: localStorage.getItem('token')}
 })
 

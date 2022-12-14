@@ -3,7 +3,7 @@ import { useAuthStore } from '@/stores/store'
 
 
 const API = axios.create({
-  baseURL: 'https://burguerqueen.onrender.com/api',
+  baseURL: 'http://localhost:3000/api',
   headers: {token: localStorage.getItem('token')}
 })
 
@@ -66,11 +66,24 @@ async function signup(newUser) {
       return error
     }
   }
-
+  async function addFavorite(id){
+    const store = useAuthStore()
+    try{
+      const response = await API.patch('/users/favorite/add',{id:id},{
+        headers:{
+          token: store.token
+        }
+      })
+      return response.data
+    } catch (error){
+      return error
+    }
+  }
   export default {
     signup,
     login,
     deleteUser,
     updateUser,
-    getUser
+    getUser,
+    addFavorite
   }

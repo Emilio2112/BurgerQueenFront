@@ -16,8 +16,11 @@
     <v-card-title
       >{{ burger.name }}
       <v-spacer />
-      <v-btn icon color="#FFC300" x-large>
-        <v-icon>mdi-heart</v-icon>
+      <v-btn icon color="black" fab x-large @click="addFavorites()" v-show="!hidden">
+        <v-icon  >mdi-heart-outline </v-icon>
+      </v-btn>
+      <v-btn icon color="red"   x-large @click="removeFavorites()" v-show="hidden">
+        <v-icon >mdi-heart</v-icon>
       </v-btn>
     </v-card-title>
     <v-card-subtitle>
@@ -83,12 +86,14 @@
 <script>
 import burger from "@/services/burgers";
 import restaurant from "@/services/restaurant";
+import api from '@/services/api'
 
 export default {
   data() {
     return {
       burger: {},
       restaurants: [],
+      hidden:false
     };
   },
   async created() {
@@ -101,6 +106,16 @@ export default {
   methods: {
    retroceder(){
     this.$router.go(-1)
+   },
+   
+   async addFavorites (){
+    this.hidden = !this.hidden
+      const respond =  await api.addFavorite(
+        this.burger._id
+    )
+    console.log(respond)
+    return respond
+    
    }
   },
   computed: {
