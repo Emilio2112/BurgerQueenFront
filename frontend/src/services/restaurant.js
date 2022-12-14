@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useAuthStore } from '../stores/store'
 
 const API = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: 'https://burguerqueen.onrender.com/api',
   headers: {token: localStorage.getItem('token')}
 })
 
@@ -55,9 +55,19 @@ async function updateRestaurant (newData) {
   }
 }
 
+async function getOneResturant(id) {
+  try {
+    const response = await API.get(`/restaurants/${id}`);
+    return response.data;
+  } catch (error) {
+    return { error: error.message };
+  }
+}
+
 export default {
   getRestaurants,
   getRestaurantBurger,
   addRestaurant,
-  updateRestaurant
+  updateRestaurant,
+  getOneResturant
 }

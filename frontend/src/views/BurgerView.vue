@@ -44,13 +44,14 @@
       <v-card-title>Puntuación</v-card-title>
 
       <v-rating
-        :value="4.5"
+        :value="burger.rating"
         color="amber"
         dense
+        readonly
         half-increments
         x-large
       ></v-rating>
-      <div class="grey--text ms-4">4.5 (413)</div>
+      <div class="grey--text ms-4">{{ burger.rating }}</div>
     </v-card-text>
 
     <v-card-actions>
@@ -99,9 +100,9 @@ export default {
     this.restaurants = result;
   },
   methods: {
-   retroceder(){
-    this.$router.go(-1)
-   }
+    retroceder() {
+      this.$router.go(-1);
+    },
   },
   computed: {
     getRestName() {
