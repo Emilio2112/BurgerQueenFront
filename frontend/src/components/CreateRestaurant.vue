@@ -21,8 +21,17 @@
       :rules="rules"
       v-model="newRestaurant.phone"
     ></v-text-field>
-    <v-btn @click.prevent="addNewRest" @keydown.enter.prevent="addNewRest">Añadir</v-btn>
-  
+    <v-btn
+      elevation="2"
+      color="#001D3D"
+      class="amber--text text--darken-1"
+      rounded
+      dark
+      @click.prevent="addNewRest"
+      @keydown.enter.prevent="addNewRest"
+    >
+      Añadir</v-btn
+    >
   </v-col>
 </template>
 
@@ -50,15 +59,12 @@ export default {
     async addNewRest() {
       const response = await restaurant.addRestaurant(this.newRestaurant);
       if (response === "error") {
-
         alert("Error creating Restaurant");
-
       } else {
         this.$router.push({ name: "restaurant" });
       }
     },
   },
-
 };
 </script>
 

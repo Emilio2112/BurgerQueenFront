@@ -24,4 +24,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+</style>
