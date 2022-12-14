@@ -55,9 +55,19 @@ async function updateRestaurant (newData) {
   }
 }
 
+async function getOneResturant(id) {
+  try {
+    const response = await API.get(`/restaurants/${id}`);
+    return response.data;
+  } catch (error) {
+    return { error: error.message };
+  }
+}
+
 export default {
   getRestaurants,
   getRestaurantBurger,
   addRestaurant,
-  updateRestaurant
+  updateRestaurant,
+  getOneResturant
 }

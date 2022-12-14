@@ -65,7 +65,9 @@ export default {
   data() {
     return {
       burgers: {},
+
       tags: ["Normal", "Cheese Burger", "Pollo", "Veggie", "Smash", "Gourmet"],
+
     };
   },
   async created() {
