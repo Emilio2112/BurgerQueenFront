@@ -58,16 +58,7 @@ import { useAuthStore } from "@/stores/store";
 export default {
   data() {
     return {
-      emailRules: [
-        (value) => !!value || "Introduce tu email",
-        (value) =>
-          value.match(/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/) ||
-          "Error en el email",
-      ],
-      passwordRules: [
-        (value) =>
-          value.length >= 6 || "El Password debe tener mÃ¡s de 6 caracteres",
-      ],
+      
       visible: false,
       email: "",
       password: "",
