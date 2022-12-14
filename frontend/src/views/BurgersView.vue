@@ -1,11 +1,26 @@
 <template>
   <v-card>
     <v-row>
-      <v-col cols="12" sm="10" md="8">
+      <v-col cols="12">
         <v-sheet elevation="10" class="py-4 px-1">
-          <v-chip-group mandatory active-class="primary--text">
-            <v-chip v-for="tag in tags" :key="tag">
-              {{ tag }}
+          <v-chip-group mandatory active-class="amber--text text--darken-1"  show-arrows>
+            <v-chip  @click="filterBurgers('Normal')">
+              Normal
+            </v-chip>
+            <v-chip @click="filterBurgers('Cheese Burger')">
+              Cheese Burger
+            </v-chip>
+            <v-chip @click="filterBurgers('Pollo')">
+              Pollo
+            </v-chip>
+            <v-chip @click="filterBurgers('Veggie')">
+              Veggie
+            </v-chip>
+            <v-chip @click="filterBurgers('Smash')">
+              Smash
+            </v-chip>
+            <v-chip @click="filterBurgers('Gourmet')">
+              Gourmet
             </v-chip>
           </v-chip-group>
         </v-sheet>
@@ -39,18 +54,12 @@
 import burger from "../services/burgers";
 import BurgerCard from "@/components/BurgerCard.vue";
 
+
+
 export default {
   data() {
     return {
       burgers: {},
-      tags: [
-        "Normal",
-        "Cheese Burger",
-        "Pollo",
-        "Veggie",
-        "Smash",
-        "Gourmet"
-      ],
     };
   },
   async created() {
@@ -63,6 +72,9 @@ export default {
     retroceder() {
       this.$router.go(-1)
     },
+    async filterBurgers(type) {
+      this.burgers = await burger.filterByType(type)
+    }
   },
 };
 </script>
