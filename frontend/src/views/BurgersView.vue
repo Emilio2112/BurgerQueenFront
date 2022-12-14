@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-container>
     <v-row>
       <v-col cols="12">
         <v-sheet elevation="10" class="py-4 px-1">
@@ -26,12 +26,20 @@
         </v-sheet>
       </v-col>
     </v-row>
-    <div v-for="(burger, idx) in burgers" :key="idx">
-      <BurgerCard :burger="burger"></BurgerCard>
-    </div>
+
+    <v-row>
+      <v-col
+        cols="12"
+        sm="6"
+        md="4"
+        v-for="(burger, idx) in burgers"
+        :key="idx"
+      >
+        <BurgerCard :burger="burger"></BurgerCard>
+      </v-col>
+    </v-row>
+
     <v-card-actions>
-
-
       <v-btn
         elevation="2"
         color="#001D3D"
@@ -43,11 +51,8 @@
         <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
         Volver
       </v-btn>
-
     </v-card-actions>
-  </v-card>
-
-
+  </v-container>
 </template>
 
 <script>
@@ -60,6 +65,9 @@ export default {
   data() {
     return {
       burgers: {},
+
+      tags: ["Normal", "Cheese Burger", "Pollo", "Veggie", "Smash", "Gourmet"],
+
     };
   },
   async created() {
@@ -70,7 +78,7 @@ export default {
   },
   methods: {
     retroceder() {
-      this.$router.go(-1)
+      this.$router.go(-1);
     },
     async filterBurgers(type) {
       this.burgers = await burger.filterByType(type)

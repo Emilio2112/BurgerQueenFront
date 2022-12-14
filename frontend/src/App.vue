@@ -27,6 +27,7 @@ export default {
 <style scoped>
 body {
   font-family: 'Montserrat', sans-serif;
+  font-size: calc(16px+1vw);
 }
 
 </style>

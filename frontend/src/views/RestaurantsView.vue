@@ -1,24 +1,32 @@
 <template>
-  <div>
+  <v-container>
     <!-- Creo las tarjetas de todos los restaurantes con el v-for -->
-    <div v-for="(restaurant, idx) in restaurants" :key="idx">
-      <!-- Cada restaurante cogera solo su propia info que pasamos por props -->
-      <RestaurantCard :restaurant="restaurant"></RestaurantCard>
-    </div>
-    <v-card-actions>
-      <v-btn
-        elevation="2"
-        color="#001D3D"
-        class="amber--text text--darken-1 ml-4"
-        rounded
-        dark
-        @click="retroceder()"
+    <v-row class="mb-2">
+      <v-col
+        v-for="(restaurant, idx) in restaurants"
+        :key="idx"
+        cols="12"
+        sm="6"
+        md="4"
       >
-        <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
-        Volver
-      </v-btn>
-    </v-card-actions>
-  </div>
+        <!-- Cada restaurante cogera solo su propia info que pasamos por props -->
+        <RestaurantCard :restaurant="restaurant"></RestaurantCard>
+      </v-col>
+    </v-row>
+    <!-- <v-card-actions> -->
+    <v-btn
+      elevation="2"
+      color="#001D3D"
+      class="amber--text text--darken-1 ml-4"
+      rounded
+      dark
+      @click="retroceder()"
+    >
+      <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
+      Volver
+    </v-btn>
+    <!-- </v-card-actions> -->
+  </v-container>
 </template>
 
 <script>
@@ -40,7 +48,7 @@ export default {
   },
   methods: {
     retroceder() {
-      this.$router.go(-1)
+      this.$router.go(-1);
     },
   },
 };

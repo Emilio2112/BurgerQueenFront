@@ -1,11 +1,24 @@
 <template>
   <v-app>
-    <hello-world />
-    <queen-card-vue />
-    <new-burger-vue />
-    <mvb-month-vue />
-<!--     <RestaurantCard /> -->
+    
+      <v-row>
+        <v-col cols="12" class="mt-8">
+          <hello-world />
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols="12" sm="6" md="4">
+          <queen-card-vue />
+        </v-col>
+        <v-col cols="12" sm="6" md="4">
+          <new-burger-vue />
+        </v-col>
+        <v-col cols="12" sm="6" md="4">
+          <mvb-month-vue />
+        </v-col>
+      </v-row>
 
+    <!--     <RestaurantCard /> -->
   </v-app>
 </template>
 
@@ -24,7 +37,7 @@ export default {
     QueenCardVue,
     NewBurgerVue,
     MvbMonthVue,
-    RestaurantCard
+    RestaurantCard,
   },
 };
 </script>
