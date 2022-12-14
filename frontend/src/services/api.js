@@ -53,7 +53,7 @@ async function signup(newUser) {
     }
   }
 
-  async function getUser(){
+ async function getUser(){
     const store = useAuthStore()
     try{
       const response = await API.get('/users/profile',{
