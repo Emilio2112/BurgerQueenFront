@@ -3,7 +3,6 @@
     <v-text-field
       label="Email"
       placeholder="Email"
-      :rules="emailRules"
       v-model="email"
       filled
       rounded
@@ -12,7 +11,6 @@
     <v-text-field
       label="Password"
       :type="visible ? 'text' : 'password'"
-      :rules="passwordRules"
       placeholder="Password"
       v-model="password"
       filled
@@ -62,6 +60,7 @@ export default {
       visible: false,
       email: "",
       password: "",
+      error:"",
 
       authStore: useAuthStore()
     };
@@ -74,19 +73,19 @@ export default {
       };
       const respond = await api.login(user);
       if (respond.error) {
-        console.log(respond.error);
+        alert("password or email wrong");
       } else {
         this.authStore.login(respond.token, respond.email);
         this.$router.push({ name: "home" });
       }
+  }
 
      },
      retroceder(){
       this.$router.go(-1)
+  },
   }
-},
 
-}
 
 </script>
 
