@@ -1,8 +1,7 @@
 <template>
   
 
-  <v-footer dark padless>
-
+  <v-footer dark padless app>
     <v-card class="flex" flat tile color="#001D3D">
       <v-card-title class="amber--text text--darken-1"> 
         <v-btn icon large> <v-icon class="amber--text text--darken-1"> mdi-email-outline</v-icon></v-btn>

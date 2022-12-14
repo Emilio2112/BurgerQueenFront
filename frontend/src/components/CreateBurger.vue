@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="6" class="mt-10 mx-auto">
+  <v-col cols="12" sm="7" class="mt-10 mx-auto">
     <v-text-field
       label="Nombre"
       :rules="rules"

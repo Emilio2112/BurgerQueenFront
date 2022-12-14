@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="4" xs="4" md="3">
+      <v-col cols="12" sm="5" md="3">
        <!--  <v-card width="256" class="mt-6"> -->
           <!-- <v-navigation-drawer permanent rigth> -->
             <!-- <v-system-bar></v-system-bar> -->
