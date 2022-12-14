@@ -67,6 +67,7 @@ export default {
     return {
       burgers: {},
       restaurants: {},
+
     };
   },
   props: {

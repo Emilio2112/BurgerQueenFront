@@ -69,7 +69,6 @@ export default {
     this.$router.go(-1)
    },
  async  deleteUser(){
-  
   await  api.deleteUser()
   this.$router.push({name:"despedida"})
    }

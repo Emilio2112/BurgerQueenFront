@@ -6,6 +6,7 @@
         placeholder="Username"
         filled
         rounded
+        required
         dense
         v-model="newData.username"
       ></v-text-field>
@@ -14,6 +15,7 @@
         placeholder="Email"
         filled
         rounded
+        required
         dense
         v-model="newData.email"
       ></v-text-field>
@@ -24,6 +26,7 @@
         filled
         rounded
         dense
+        required
         :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
         @click:append="visible = !visible"
         v-model="newData.password"
@@ -35,6 +38,7 @@
         filled
         rounded
         dense
+        required
         :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
         @click:append="visible = !visible"
       ></v-text-field>
@@ -94,7 +98,12 @@ export default {
     }
   },
   },
- 
+    async created(){
+      const respond = await api.getUser();
+      this.newData.username= respond.username
+      this.newData.email= respond.email
+      this.newData.password= respond.password
+    }
 };
 </script>
 

@@ -66,11 +66,53 @@ async function signup(newUser) {
       return error
     }
   }
-
+  async function addFavorite(id){
+    const store = useAuthStore()
+    try{
+      const response = await API.patch('/users/favorite/add',{id:id},{
+        headers:{
+          token: store.token
+        }
+      })
+      return response.data
+    } catch (error){
+      return error
+    }
+  }
+  async function removeFavoriteBurger(id){
+    const store = useAuthStore()
+    try{
+      const response = await API.patch('/users/favorite/remove',{id:id},{
+        headers:{
+          token: store.token
+        }
+      })
+      return response.data
+    } catch (error){
+      return error
+    }
+  }
+  async function showFavoriteBurguer(){
+    const store = useAuthStore()
+    try{
+      const response = await API.get('/users/favorite/burger',{
+        headers:{
+          token: store.token
+        }
+      })
+      return response.data
+    } catch (error){
+      return error
+    }
+  }
+  
   export default {
     signup,
     login,
     deleteUser,
     updateUser,
-    getUser
+    getUser,
+    addFavorite,
+    removeFavoriteBurger,
+    showFavoriteBurguer
   }
