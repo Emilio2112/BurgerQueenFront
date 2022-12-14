@@ -16,7 +16,17 @@
     <v-card-title
       >{{ burger.name }}
       <v-spacer />
-      <v-btn icon color="#FFC300" x-large>
+      <v-btn
+        icon
+        color="black"
+        fab
+        x-large
+        @click="addFavorites()"
+        v-show="!hidden"
+      >
+        <v-icon>mdi-heart-outline </v-icon>
+      </v-btn>
+      <v-btn icon color="red" x-large @click="removeFavorite()" v-show="hidden">
         <v-icon>mdi-heart</v-icon>
       </v-btn>
     </v-card-title>
@@ -83,12 +93,15 @@
 <script>
 import burger from "@/services/burgers";
 import restaurant from "@/services/restaurant";
+import api from "@/services/api";
 
 export default {
   data() {
     return {
       burger: {},
       restaurants: [],
+      hidden: false,
+      fav: [],
     };
   },
   async created() {
@@ -97,11 +110,29 @@ export default {
       this.burger.restaurant.toString()
     );
     this.restaurants = result;
+    this.fav = await api.showFavoriteBurguer();
+    if (this.fav.includes(this.burger._id)) {
+      this.hidden = true;
+    } else {
+      this.hidden = false;
+    }
+    console.log(this.fav);
   },
   methods: {
-   retroceder(){
-    this.$router.go(-1)
-   }
+    retroceder() {
+      this.$router.go(-1);
+    },
+
+    async addFavorites() {
+      this.hidden = !this.hidden;
+      const respond = await api.addFavorite(this.burger._id);
+      return respond;
+    },
+    async removeFavorite() {
+      this.hidden = !this.hidden;
+      const respond = await api.removeFavoriteBurger(this.burger._id);
+      return respond;
+    },
   },
   computed: {
     getRestName() {

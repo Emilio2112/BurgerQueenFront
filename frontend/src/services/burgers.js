@@ -38,8 +38,18 @@ async function getOneBurger(id) {
   }
 }
 
+async function filterByType(type) {
+  try {
+  const response = await API.get(`/burgers/style/${type}`)
+  return response.data;
+  } catch (error) {
+    return { error: error.message };
+  }
+}
+
 export default {
   getBurgers,
   addBurger,
-  getOneBurger
+  getOneBurger,
+  filterByType
 };
