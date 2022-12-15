@@ -2,7 +2,7 @@
   <v-app>
     
       <v-row>
-        <v-col cols="12" class="mt-8">
+        <v-col cols="12">
           <hello-world />
         </v-col>
       </v-row>
