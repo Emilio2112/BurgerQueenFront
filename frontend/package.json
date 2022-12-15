@@ -10,6 +10,7 @@
   "dependencies": {
     "@vueuse/core": "^9.6.0",
     "axios": "^1.2.1",
+    "cloudinary-vue": "^1.2.4",
     "core-js": "^3.8.3",
     "pinia": "^2.0.27",
     "vue": "^2.6.14",
