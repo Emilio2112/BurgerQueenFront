@@ -34,17 +34,14 @@
           
           <div v-if="!store.isLoggedIn">
 
-            <v-list-item>
-            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'login' }">
-              Login </v-btn>
+            <v-list-item color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'login' }">
+              Login
           </v-list-item>
  
           </div>
           <div v-if="store.isLoggedIn && role === 'admin'">
-            <v-list-item>
-            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'soloadmin' }">
-              Admin Site  </v-btn>
-
+            <v-list-item color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'soloadmin' }">
+              Admin Site
             </v-list-item>
           </div>
           <div v-if="store.isLoggedIn">
