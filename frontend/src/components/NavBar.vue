@@ -10,64 +10,97 @@
         >Burger Queen</v-toolbar-title
       >
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" color="#001D3D" fixed top temporary height="fit-content" class="mt-14">
-      <v-list nav dense>
-        <v-list-item-group
-          color="#001D3D" 
-          v-model="group"
+    <v-navigation-drawer
+      v-model="drawer"
+      color="#001D3D"
+      fixed
+      top
+      temporary
+      height="fit-content"
+      class="mt-14"
+    >
+      <v-list nav dense elevation="2">
+        <v-list-item-group color="#001D3D" v-model="group">
+          <v-list-item
+            class="amber--text text--darken-1"
+            rounded
+            dark
+            :to="{ name: 'home' }"
+          >
+            Home
+          </v-list-item>
+          <v-list-item
+            class="amber--text text--darken-1"
+            rounded
+            dark
+            :to="{ name: 'burgers' }"
+          >
+            Hamburguesas
+          </v-list-item>
 
-        >
-        <v-list-item  class="amber--text text--darken-1" rounded dark :to="{ name: 'home' }">
-              Home
-          </v-list-item>
-          <v-list-item color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'burgers' }">
-              Hamburguesas
-          </v-list-item>
-
-          <v-list-item color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'restaurant' }">
-              Restaurantes
+          <v-list-item
+            class="amber--text text--darken-1"
+            rounded
+            dark
+            :to="{ name: 'restaurant' }"
+          >
+            Restaurantes
           </v-list-item>
 
-          <v-list-item elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'about' }">
-              About Us
+          <v-list-item
+            color="#001D3D"
+            class="amber--text text--darken-1"
+            rounded
+            dark
+            :to="{ name: 'about' }"
+          >
+            About Us
           </v-list-item>
-          
+
           <div v-if="!store.isLoggedIn">
-
-            <v-list-item>
-            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'login' }">
-              Login </v-btn>
-          </v-list-item>
- 
+            <v-list-item
+              class="amber--text text--darken-1"
+              rounded
+              dark
+              :to="{ name: 'login' }"
+            >
+              Login
+            </v-list-item>
           </div>
           <div v-if="store.isLoggedIn && role === 'admin'">
-            <v-list-item>
-            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'soloadmin' }">
-              Admin Site  </v-btn>
-
+            <v-list-item
+              class="amber--text text--darken-1"
+              rounded
+              dark
+              :to="{ name: 'soloadmin' }"
+            >
+              Admin Site
             </v-list-item>
           </div>
           <div v-if="store.isLoggedIn">
-            <v-list-item color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'profile' }">
+            <v-list-item
+              class="amber--text text--darken-1"
+              rounded
+              dark
+              :to="{ name: 'profile' }"
+            >
               Profile
             </v-list-item>
             <v-divider></v-divider>
 
             <v-list-item
-                color="#001D3D"
-                class="amber--text text--darken-1"
-                rounded
-                dark
-                @click="logout()"
-              >
-                Log Out
+              class="amber--text text--darken-1"
+              rounded
+              dark
+              @click="logout()"
+            >
+              Log Out
             </v-list-item>
           </div>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
   </v-row>
- 
 </template>
 
 <script>
@@ -80,7 +113,7 @@ export default {
     drawer: false,
     group: null,
     store: useAuthStore(),
-    role:""
+    role: "",
   }),
   methods: {
     logout() {
@@ -89,9 +122,9 @@ export default {
     },
   },
   async created() {
-    const rol = await api.getUser()
-    this.role = rol.role
-  }
+    const rol = await api.getUser();
+    this.role = rol.role;
+  },
 };
 </script>
 
