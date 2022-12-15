@@ -1,5 +1,9 @@
 <template>
   <v-card class="mt-10">
+   <v-card-title>
+    Signup
+   </v-card-title>
+
     <v-text-field
       label="Nombre"
       placeholder="Nombre"
