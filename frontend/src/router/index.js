@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import { useAuthStore } from "@/stores/store";
 import HomeView from "@/views/HomeView.vue";
 import SignupView from "@/views/SignupView.vue";
 import AboutView from "@/views/AboutView.vue";
@@ -97,5 +98,13 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
+
+const store = useAuthStore()
+
+router.beforeEach((to, from, next) => {
+  if(!store.token && store.isLoggedIn) next({ name: 'login'})
+  else next()
+}) 
+
 
 export default router;
