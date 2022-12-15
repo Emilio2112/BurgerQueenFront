@@ -150,9 +150,7 @@ export default {
   async created() {
     this.email = this.store.email
     const userA = await api.getUser(this.store.token)
-    console.log(userA)
     this.user = userA.name
-    
   }
 };
 </script>
