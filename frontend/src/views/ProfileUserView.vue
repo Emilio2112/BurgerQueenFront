@@ -21,6 +21,7 @@
           <v-card-title class="black--text" center space-between>
             {{ users.email }}
           </v-card-title>
+
         </v-row>
       </v-col>
     </v-row>
@@ -91,7 +92,8 @@ export default {
     borrarCuenta() {
       this.$router.push({ name: "delete" });
     },
-  },
+
+},
   data() {
     return {
       fav:[],
@@ -99,9 +101,12 @@ export default {
       favorites: [],
     };
   },
-  async created() {
+  async created() {    
+    const result = await api.getUser();
+    this.users = result;
     this.favorites = await api.getfavorites();
   },
+  
 };
 </script>
 
