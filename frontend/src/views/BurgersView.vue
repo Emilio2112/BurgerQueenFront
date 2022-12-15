@@ -3,7 +3,11 @@
     <v-row>
       <v-col cols="12">
         <v-sheet elevation="10" class="py-4 px-1">
-          <v-chip-group mandatory active-class="amber--text text--darken-1"  show-arrows>
+          <v-chip-group mandatory active-class="amber--text text--darken-1"  show-arrows >
+            <v-chip @click="window.onload()">
+              Todas
+              </v-chip>
+
             <v-chip  @click="filterBurgers('Normal')">
               Normal
             </v-chip>
@@ -68,8 +72,7 @@ export default {
   data() {
     return {
       burgers: {},
-
-      tags: ["Normal", "Cheese Burger", "Pollo", "Veggie", "Smash", "Gourmet"],
+      tags: ["Todas","Normal", "Cheese Burger", "Pollo", "Veggie", "Smash", "Gourmet"],
 
     };
   },
@@ -90,6 +93,7 @@ export default {
       this.burgers = await burger.getBurgers()
     }
   },
+
 };
 </script>
 
