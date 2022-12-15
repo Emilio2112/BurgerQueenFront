@@ -23,7 +23,7 @@
 
     <v-card-actions>
       <v-spacer />
-      <RouterLink :to="{ path: `/burger/639b2ac6d9ce1f83c6915b68` }" style="text-decoration: none;">
+      <RouterLink :to="{ path: `/burger/6391d27c25cf13efff1dfa8d` }" style="text-decoration: none;">
       <v-btn
         id="text"
         elevation="2"
