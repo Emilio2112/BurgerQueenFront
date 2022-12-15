@@ -104,6 +104,20 @@ async function signup(newUser) {
     } catch (error){
       return error
     }
+    
+  }
+  async function getfavorites(){
+    const store = useAuthStore()
+    try{
+      const response = await API.get('/users/favorite',{
+        headers:{
+          token: store.token
+        }
+      })
+      return response.data
+    } catch (error){
+      return error
+    }
   }
   
   export default {
@@ -114,5 +128,6 @@ async function signup(newUser) {
     getUser,
     addFavorite,
     removeFavoriteBurger,
-    showFavoriteBurguer
+    showFavoriteBurguer,
+    getfavorites
   }

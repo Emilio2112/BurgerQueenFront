@@ -6,7 +6,7 @@
         placeholder="Username"
         filled
         rounded
-        required
+        aria-required="true"
         dense
         v-model="newData.username"
       ></v-text-field>
@@ -15,7 +15,7 @@
         placeholder="Email"
         filled
         rounded
-        required
+        aria-required="true"
         dense
         v-model="newData.email"
       ></v-text-field>
@@ -26,7 +26,7 @@
         filled
         rounded
         dense
-        required
+        aria-required="true"
         :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
         @click:append="visible = !visible"
         v-model="newData.password"
@@ -38,7 +38,7 @@
         filled
         rounded
         dense
-        required
+        aria-required="true"
         :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
         @click:append="visible = !visible"
       ></v-text-field>

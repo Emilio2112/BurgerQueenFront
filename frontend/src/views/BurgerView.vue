@@ -19,7 +19,6 @@
       <v-btn
         icon
         color="black"
-        fab
         x-large
         @click="addFavorites()"
         v-show="!hidden"
@@ -117,13 +116,11 @@ export default {
     } else {
       this.hidden = false;
     }
-    console.log(this.fav);
   },
   methods: {
     retroceder() {
       this.$router.go(-1);
     },
-
 
     async addFavorites() {
       this.hidden = !this.hidden;
@@ -135,7 +132,6 @@ export default {
       const respond = await api.removeFavoriteBurger(this.burger._id);
       return respond;
     },
-
   },
   computed: {
     getRestName() {
