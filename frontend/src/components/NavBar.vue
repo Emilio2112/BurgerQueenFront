@@ -10,29 +10,26 @@
         >Burger Queen</v-toolbar-title
       >
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" fixed top temporary height="fit-content" class="mt-14">
+    <v-navigation-drawer v-model="drawer" color="#001D3D" fixed top temporary height="fit-content" class="mt-14">
       <v-list nav dense>
         <v-list-item-group
+          color="#001D3D" 
           v-model="group"
-          active-class="deep-purple--text text--accent-4"
+
         >
-        <v-list-item>
-            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'home' }">
-              Home</v-btn>
+        <v-list-item  class="amber--text text--darken-1" rounded dark :to="{ name: 'home' }">
+              Home
           </v-list-item>
-          <v-list-item>
-            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'burgers' }">
-              Hamburguesas</v-btn>
+          <v-list-item color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'burgers' }">
+              Hamburguesas
           </v-list-item>
 
-          <v-list-item>
-            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'restaurant' }">
-              Restaurantes</v-btn>
+          <v-list-item color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'restaurant' }">
+              Restaurantes
           </v-list-item>
 
-          <v-list-item>
-            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'about' }">
-              About Us</v-btn>
+          <v-list-item elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'about' }">
+              About Us
           </v-list-item>
           
           <div v-if="!store.isLoggedIn">
@@ -43,22 +40,20 @@
           </v-list-item>
  
           </div>
-          <div v-if="store.isLoggedIn">
+          <div v-if="store.isLoggedIn && role === 'admin'">
             <v-list-item>
             <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'soloadmin' }">
-              Admin  </v-btn>
+              Admin Site  </v-btn>
+
             </v-list-item>
           </div>
           <div v-if="store.isLoggedIn">
-            <v-list-item>
-            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'profile' }">
-              Profile  </v-btn>
+            <v-list-item color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'profile' }">
+              Profile
             </v-list-item>
             <v-divider></v-divider>
 
-            <v-list-item>
-              <v-btn
-                elevation="2"
+            <v-list-item
                 color="#001D3D"
                 class="amber--text text--darken-1"
                 rounded
@@ -66,23 +61,26 @@
                 @click="logout()"
               >
                 Log Out
-              </v-btn>
             </v-list-item>
           </div>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
   </v-row>
+ 
 </template>
 
 <script>
 import { RouterLink } from "vue-router";
 import { useAuthStore } from "@/stores/store";
+import api from "@/services/api";
+
 export default {
   data: () => ({
     drawer: false,
     group: null,
     store: useAuthStore(),
+    role:""
   }),
   methods: {
     logout() {
@@ -90,6 +88,10 @@ export default {
       this.$router.push({ name: "home" });
     },
   },
+  async created() {
+    const rol = await api.getUser()
+    this.role = rol.role
+  }
 };
 </script>
 

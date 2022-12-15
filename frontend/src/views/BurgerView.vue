@@ -10,7 +10,7 @@
 
     <v-img
       height="250"
-      src="https://fastly.4sqi.net/img/general/600x600/592232052_x_CjIOIhjjYloKlglKOxM5vifzCxr-ECboqu-nc7Plc.jpg"
+      :src="burger.photo"
     ></v-img>
 
     <v-card-title
