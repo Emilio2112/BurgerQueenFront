@@ -1,8 +1,8 @@
 <template>
 
     <v-card class="back">
-      <v-card-title>Burger Queen</v-card-title>
-      <v-card-text id="color">
+      <v-card-title id="text">Burger Queen</v-card-title>
+      <v-card-text id="text">
         Bienvenidos a la Web de <br />
         los amantes de las Hamburguesas!!
       </v-card-text>
@@ -22,8 +22,11 @@ export default {};
   color: #ffc300;
   height: 400px;
 }
-#color {
+#text {
   color: #ffc300;
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(16px+1vw);
+  font-weight: bold;
 }
 
 @media (min-width: 600px) {
