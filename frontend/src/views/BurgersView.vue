@@ -22,6 +22,9 @@
             <v-chip @click="filterBurgers('Gourmet')">
               Gourmet
             </v-chip>
+            <v-chip @click="allBurgers">
+              Todas
+            </v-chip>
           </v-chip-group>
         </v-sheet>
       </v-col>
@@ -82,6 +85,9 @@ export default {
     },
     async filterBurgers(type) {
       this.burgers = await burger.filterByType(type)
+    },
+    async allBurgers(){
+      this.burgers = await burger.getBurgers()
     }
   },
 };
