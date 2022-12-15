@@ -34,14 +34,17 @@
           
           <div v-if="!store.isLoggedIn">
 
-            <v-list-item elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'login' }">
-              Login
+            <v-list-item>
+            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'login' }">
+              Login </v-btn>
           </v-list-item>
  
           </div>
-          <div v-if="store.isLoggedIn">
-            <v-list-item color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'soloadmin' }">
-              Admin
+          <div v-if="store.isLoggedIn && role === 'admin'">
+            <v-list-item>
+            <v-btn elevation="2" color="#001D3D" class="amber--text text--darken-1" rounded dark :to="{ name: 'soloadmin' }">
+              Admin Site  </v-btn>
+
             </v-list-item>
           </div>
           <div v-if="store.isLoggedIn">
@@ -64,16 +67,20 @@
       </v-list>
     </v-navigation-drawer>
   </v-row>
+ 
 </template>
 
 <script>
 import { RouterLink } from "vue-router";
 import { useAuthStore } from "@/stores/store";
+import api from "@/services/api";
+
 export default {
   data: () => ({
     drawer: false,
     group: null,
     store: useAuthStore(),
+    role:""
   }),
   methods: {
     logout() {
@@ -81,6 +88,10 @@ export default {
       this.$router.push({ name: "home" });
     },
   },
+  async created() {
+    const rol = await api.getUser()
+    this.role = rol.role
+  }
 };
 </script>
 
