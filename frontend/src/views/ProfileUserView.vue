@@ -14,7 +14,8 @@
             <v-icon color="#FFD60A0" class="mr-1"> mdi-pencil </v-icon>
             Editar
           </v-btn>
-          <v-card-title class="black--text" center space-between>
+
+          <v-card-title class="black--text" center space-between >
             {{ users.name }}
           </v-card-title>
           <v-card-title class="black--text" center space-between>
@@ -27,40 +28,16 @@
           My crush
         </v-list-item-title>
         <br />
-        <br />
-    <v-card
-    class="mx-auto"
-    max-width="344"
-    outlined
-  >
-  <div v-for="favs in favorites">
-    <v-list-item three-line>
-      <v-list-item-content>
-        <div class="text-overline mb-4">
- 
-            <v-card-title>
-              {{ favs.name }}
-            </v-card-title>
-          <v-card-text>
-            {{favs.restaurant.name}}
-          </v-card-text>
-        </div>
+        <v-row>
+          <v-col
+          v-for="(favs,idx) in favorites" :key="idx" cols="12" sm="5" md="4">
 
-       
-      </v-list-item-content>
+          <ProfileFavorite :fav="favs"/>
 
-      <v-list-item-avatar
-        tile
-        size="80"
-        color="grey"
-      >
-      <v-img :src="favs.photo">
-              
-            </v-img>
-    </v-list-item-avatar>
-    </v-list-item>
-  </div>
-  </v-card>
+          </v-col>
+        </v-row>
+            
+        <br>
     <v-list-item-title class="text-h5 indigo--text text--darken-4">
       Mis criticas
     </v-list-item-title>
@@ -98,10 +75,14 @@
 
 <script>
 import api from "@/services/api";
+import ProfileFavorite from "@/components/ProfileFavorite.vue"
 
 import { RouterLink } from "vue-router";
 
 export default {
+  components:{
+    ProfileFavorite
+  },
   name: "Button",
   methods: {
     retroceder() {
@@ -113,17 +94,13 @@ export default {
   },
   data() {
     return {
+      fav:[],
       users: {},
       favorites: [],
     };
   },
-
   async created() {
-    const result = await api.getUser();
-    console.log(result);
-    this.users = result;
-    const favs = await api.getfavorites();
-    this.favorites = favs;
+    this.favorites = await api.getfavorites();
   },
 };
 </script>
