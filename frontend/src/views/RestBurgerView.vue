@@ -2,40 +2,41 @@
   <v-container>
     <v-row>
       <v-col>
-
-          <v-img
-            class="amber--text text--darken-1 align-end"
-            height="200px"
-            src="https://i.pinimg.com/736x/5f/93/03/5f9303c8a1127f572b061c7632bb3d77--restaurant-layout-burger-restaurant.jpg"
-          >
-          <div >
-            <v-expansion-panels class="back" tile>
-    <v-expansion-panel
-      v-for="(item,i) in 1"
-      :key="i"
-    >
-      <v-expansion-panel-header >
-        {{ restaurants.name }}
-      </v-expansion-panel-header>
-      <v-expansion-panel-content>
-        <div>{{ restaurants.address }}</div>
-        <div>{{ restaurants.location }}</div>
-          <div>{{ restaurants.phone }}</div>
-            <div><a :href="restaurants.web">Visitar restaurante</a></div>
-      </v-expansion-panel-content>
-    </v-expansion-panel>
-  </v-expansion-panels>
-          </div>
-          </v-img>
-          <v-card-text>
-              
-              
-            </v-card-text>
+        <v-img
+        position="top"
+          class="amber--text text--darken-1 align-end"
+          height="200px"
+          src="https://i.pinimg.com/736x/5f/93/03/5f9303c8a1127f572b061c7632bb3d77--restaurant-layout-burger-restaurant.jpg"
+        />
         <div>
-          <!-- mostramos las burger de cada restaurante -->
-          <div v-for="(burger, idx) in burgers" :key="idx">
+          <v-expansion-panels class="back" tile>
+            <v-expansion-panel v-for="(item, i) in 1" :key="i">
+              <v-expansion-panel-header class="text-h5 mb-1 font-weight-bold">
+                {{ restaurants.name }}
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <div>{{ restaurants.address }}</div>
+                <div>{{ restaurants.location }}</div>
+                <div>{{ restaurants.phone }}</div>
+                <div><a :href="restaurants.web">Visitar restaurante</a></div>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+        </div>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col 
+      cols="12"
+        sm="6"
+        md="4"
+        v-for="(burger, idx) in burgers"
+        :key="idx">
             <BurgerCard :burger="burger" />
-          </div>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
           <v-card-actions>
             <v-btn
               elevation="2"
@@ -49,7 +50,6 @@
               Volver
             </v-btn>
           </v-card-actions>
-        </div>
       </v-col>
     </v-row>
   </v-container>
@@ -67,7 +67,6 @@ export default {
     return {
       burgers: {},
       restaurants: {},
-
     };
   },
   props: {
