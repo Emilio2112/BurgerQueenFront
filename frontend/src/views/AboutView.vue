@@ -1,17 +1,19 @@
 <template>
   <v-container>
     <v-row>
-      <v-col 
-        cols="12"
-        sm="6"
-        md="4">
-        <v-card width="360px" min-width="360px" color="#001D3D" class="mb-10 mx-auto">
+      <v-col cols="12" sm="6" md="4">
+        <v-card
+          width="360px"
+          min-width="360px"
+          color="#001D3D"
+          class="mb-10 mx-auto"
+        >
           <v-list-item class="amber--text text--darken-1 ml-4">
             <v-list-item-content>
               <div class="mb-4">Javier Cabrera</div>
 
               <v-list-item class="amber--text text--darken-1"
-                >Desarrollador web Junior en proceso de aprendizaje. <br>
+                >Desarrollador web Junior en proceso de aprendizaje. <br />
                 Estudie sistemas de telecomunicaciones, soy un apasionado por
                 los videojuegos, me encanta escribir y leer.</v-list-item
               >
@@ -24,16 +26,20 @@
 
           <v-card-actions>
             <v-btn outlined rounded text>
+              <v-icon color="#FFC300" class="mr-1"> mdi-github</v-icon>
               <a
-              target="_blank"
+                id="text"
+                target="_blank"
                 href="https://github.com/Tommyscripts"
                 class="amber--text text--darken-1 ml-4"
                 >GitHub</a
               >
             </v-btn>
+            <v-spacer></v-spacer>
             <v-btn outlined rounded text>
+              <v-icon color="#FFC300" class="mr-1"> mdi-linkedin</v-icon>
               <a
-              id="text"
+                id="text"
                 href="https://www.linkedin.com/in/javierescoz/"
                 class="amber--text text--darken-1 ml-4"
                 target="_blank"
@@ -43,60 +49,71 @@
           </v-card-actions>
         </v-card>
       </v-col>
-        <v-col 
-        cols="12"
-        sm="6"
-        md="4">
-        <v-card width="360px" min-width="360px" color="#001D3D" class="mb-10 mx-auto">
+      <v-col cols="12" sm="6" md="4">
+        <v-card
+          width="360px"
+          min-width="360px"
+          color="#001D3D"
+          class="mb-10 mx-auto"
+        >
           <v-list-item class="amber--text text--darken-1 ml-4">
             <v-list-item-content>
               <div class="mb-4">Joaquín Gázquez San Emeterio</div>
-              <v-list-item class="amber--text text--darken-1 ml-4"
-                >
-                Desarrollador Full Stack en proceso de aprendizaje.
-                Diplomado en Ciencias Empresariales, siempre me ha atraido 
-                el mundo de la informática (tanto a nivel de hardware como 
-                de software), me lancé a la aventura de aquirir conocimientos 
-                de desarrollador de software y aquí estoy dando mis primeros pasos.</v-list-item
+              <v-list-item class="amber--text text--darken-1 ml-4">
+                Desarrollador Full Stack en proceso de aprendizaje. Diplomado en
+                Ciencias Empresariales, siempre me ha atraido el mundo de la
+                informática (tanto a nivel de hardware como de software), me
+                lancé a la aventura de aquirir conocimientos de desarrollador de
+                software y aquí estoy dando mis primeros pasos.</v-list-item
               >
             </v-list-item-content>
 
-            <v-list-item-avatar tile size="180" color="grey">
-              <v-img src="https://res.cloudinary.com/burgerproject/image/upload/v1671203010/My%20images/lcof1vi12ufrytceucmd.jpg"> </v-img>
+            <v-list-item-avatar tile size="100" color="grey">
+              <v-img
+                src="https://res.cloudinary.com/burgerproject/image/upload/v1671203010/My%20images/lcof1vi12ufrytceucmd.jpg"
+              >
+              </v-img>
             </v-list-item-avatar>
           </v-list-item>
           <v-card-actions>
             <v-btn outlined rounded text>
+              <v-icon color="#FFC300" class="mr-1"> mdi-github</v-icon>
               <a
+                id="text"
                 href="https://github.com/Joaquingse"
-
                 class="amber--text text--darken-1 ml-4"
                 target="_blank"
                 >GitHub</a
               >
             </v-btn>
+            <v-spacer></v-spacer>
             <v-btn outlined rounded text>
+              <v-icon color="#FFC300" class="mr-1"> mdi-linkedin</v-icon>
               <a
+                id="text"
                 href="https://www.linkedin.com/in/joaquingse/"
                 class="amber--text text--darken-1 ml-4"
-                target="_blank">
-                >Linkedin</a
+                target="_blank"
+              >
+                Linkedin</a
               >
             </v-btn>
           </v-card-actions>
         </v-card>
-        </v-col>
-        <v-col 
-        cols="12"
-        sm="6"
-        md="4">
-        <v-card width="360px" min-width="360px" color="#001D3D" class="mb-10 mx-auto">
+      </v-col>
+      <v-col cols="12" sm="6" md="4">
+        <v-card
+          width="360px"
+          min-width="360px"
+          color="#001D3D"
+          class="mb-10 mx-auto"
+        >
           <v-list-item class="amber--text text--darken-1 ml-4">
             <v-list-item-content>
               <div class="mb-4">Emilio Casado</div>
 
               <v-list-item class="amber--text text--darken-1"
-                >El aliento de mi gato huele a comida de gato.</v-list-item
+                >Desarrollador Full Stack en proceso de aprendizaje.</v-list-item
               >
             </v-list-item-content>
 
@@ -107,20 +124,25 @@
 
           <v-card-actions>
             <v-btn outlined rounded text>
+              <v-icon color="#FFC300" class="mr-1"> mdi-github</v-icon>
               <a
-              id="text"
+                id="text"
                 href="https://github.com/Emilio2112"
                 class="amber--text text--darken-1 ml-4"
                 target="_blank"
-                >GitHub</a>
+                >GitHub</a
+              >
             </v-btn>
+            <v-spacer></v-spacer>
             <v-btn outlined rounded text>
+              <v-icon color="#FFC300" class="mr-1"> mdi-linkedin</v-icon>
               <a
-              id="text"
+                id="text"
                 href="https://www.linkedin.com/in/emilio-casado-de-galdo-b5a576188/"
                 class="amber--text text--darken-1 ml-4"
                 target="_blank"
-                >Linkedin</a>
+                >Linkedin</a
+              >
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -128,7 +150,7 @@
     </v-row>
     <v-row>
       <v-btn
-      id="text"
+        id="text"
         elevation="2"
         color="#001D3D"
         class="amber--text text--darken-1 ml-4"
@@ -142,7 +164,7 @@
       <v-spacer></v-spacer>
       <RouterLink :to="{ name: 'home' }" style="text-decoration: none">
         <v-btn
-        id="text"
+          id="text"
           elevation="2"
           color="#001D3D"
           class="amber--text text--darken-1 ml-4"

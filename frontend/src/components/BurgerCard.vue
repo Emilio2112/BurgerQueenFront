@@ -15,9 +15,9 @@
     </v-card-subtitle>
 
     <v-card-text id="text" class="text--primary">
-      <div>{{ getRestName }}</div>
+      <div >{{ getRestName }}</div>
 
-      <div>
+      <div class="text-truncate">
         {{ burger.description }}
       </div>
     </v-card-text>
