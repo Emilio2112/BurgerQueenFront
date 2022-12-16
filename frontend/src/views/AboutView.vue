@@ -22,6 +22,7 @@
           <v-card-actions>
             <v-btn outlined rounded text>
               <a
+              target="_blank"
                 href="https://github.com/Tommyscripts"
                 class="amber--text text--darken-1 ml-4"
                 >GitHub</a
@@ -31,6 +32,7 @@
               <a
                 href="https://www.linkedin.com/in/javierescoz/"
                 class="amber--text text--darken-1 ml-4"
+                target="_blank"
                 >Linkedin</a
               >
             </v-btn>
@@ -39,32 +41,37 @@
         <v-card max-width="500" color="#001D3D">
           <v-list-item three-line class="amber--text text--darken-1 ml-4">
             <v-list-item-content>
-              <div class="mb-4">Javier Cabrera</div>
+              <div class="mb-4">Joaquín Gázquez San Emeterio</div>
 
               <v-list-item class="amber--text text--darken-1 ml-4"
-                >Soy un desarrollador web Junior en proceso de aprendizaje.
-                Estudie sistemas de telecomunicaciones, soy un apasionado por
-                los videojuegos, me encanta escribir y leer.</v-list-item
+                >
+                Desarrollador Full Stack en proceso de aprendizaje.
+                Diplomado en Ciencias Empresariales, siempre me ha atraido 
+                el mundo de la informática (tanto a nivel de hardware como 
+                de software), me lancé a la aventura de aquirir conocimientos 
+                de desarrollador de software y aquí estoy dando mis primeros pasos.</v-list-item
               >
             </v-list-item-content>
 
             <v-list-item-avatar tile size="180" color="grey">
-              <v-img src="@/img/photo_2020-10-17_09-16-32.jpg"> </v-img>
+              <v-img src="https://res.cloudinary.com/burgerproject/image/upload/v1671203010/My%20images/lcof1vi12ufrytceucmd.jpg"> </v-img>
             </v-list-item-avatar>
           </v-list-item>
 
           <v-card-actions>
             <v-btn outlined rounded text>
               <a
-                href="https://github.com/Tommyscripts"
+                href="https://github.com/Joaquingse"
                 class="amber--text text--darken-1 ml-4"
+                target="_blank"
                 >GitHub</a
               >
             </v-btn>
             <v-btn outlined rounded text>
               <a
-                href="https://www.linkedin.com/in/javierescoz/"
+                href="https://www.linkedin.com/in/joaquingse/"
                 class="amber--text text--darken-1 ml-4"
+                target="_blank">
                 >Linkedin</a
               >
             </v-btn>
@@ -92,15 +99,15 @@
               <a
                 href="https://github.com/Tommyscripts"
                 class="amber--text text--darken-1 ml-4"
-                >GitHub</a
-              >
+                target="_blank"
+                >GitHub</a>
             </v-btn>
             <v-btn outlined rounded text>
               <a
                 href="https://www.linkedin.com/in/javierescoz/"
                 class="amber--text text--darken-1 ml-4"
-                >Linkedin</a
-              >
+                target="_blank"
+                >Linkedin</a>
             </v-btn>
           </v-card-actions>
         </v-card>

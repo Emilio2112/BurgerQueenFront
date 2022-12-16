@@ -31,7 +31,8 @@
             class="amber--text text--darken-1"
             rounded
             dark
-            @click="userLogin"
+            @click.prevent="userLogin"
+            @keydown.enter="userLogin"
           >
             <v-icon color="#FFC300"> mdi-check </v-icon>
             Aceptar

@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import api from "@/services/api";
 import HelloWorld from "../components/HelloWorld.vue";
 import QueenCardVue from "../components/QueenCard.vue";
 import NewBurgerVue from "../components/NewBurger.vue";
@@ -38,6 +39,11 @@ export default {
     NewBurgerVue,
     MvbMonthVue,
     RestaurantCard,
+  },
+  async beforeCreate() {
+    const rol = await api.getUser();
+    console.log(rol.role)
+    this.role = rol.role;
   },
 };
 </script>

@@ -65,8 +65,11 @@ export default {
     };
   },
   methods: {
+    retroceder() {
+      this.$router.go(-1);
+    },
     async updateUsers() {
-      const respond = await api.updateUser(this.Data);
+      const respond = await api.updateUser(this.data);
       if (respond === "error") {
         console.log("No se pudo actualizar");
       } else {
