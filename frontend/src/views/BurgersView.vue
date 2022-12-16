@@ -4,10 +4,6 @@
       <v-col cols="12">
         <v-sheet elevation="10" class="py-4 px-1">
           <v-chip-group mandatory active-class="amber--text text--darken-1"  show-arrows >
-            <v-chip @click="window.onload()">
-              Todas
-              </v-chip>
-
             <v-chip  @click="filterBurgers('Normal')">
               Normal
             </v-chip>
