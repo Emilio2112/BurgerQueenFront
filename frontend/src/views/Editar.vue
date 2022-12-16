@@ -1,6 +1,5 @@
 <template>
   <div>
-<
     <v-card class="mt-10">
       <br />
       <v-text-field
