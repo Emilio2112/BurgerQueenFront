@@ -13,7 +13,7 @@
     <v-card-subtitle id="text" class="pb-0"> {{ restaurant.location }} </v-card-subtitle>
 
     <v-card-text id="text" class="text--primary">
-      <div>{{ restaurant.address }}</div>
+      <div class="text-truncate">{{ restaurant.address }}</div>
 
       <div>{{ restaurant.phone }}</div>
 
