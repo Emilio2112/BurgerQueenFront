@@ -25,7 +25,7 @@ export default {};
 #text {
   color: #ffc300;
   font-family: "Montserrat", sans-serif;
-  font-size: calc(16px+1vw);
+
   font-weight: bold;
 }
 
