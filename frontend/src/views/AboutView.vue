@@ -14,8 +14,7 @@
 
               <v-list-item class="amber--text text--darken-1"
                 >Desarrollador web Junior en proceso de aprendizaje. <br />
-                Estudie sistemas de telecomunicaciones, soy un apasionado por
-                los videojuegos, me encanta escribir y leer.</v-list-item
+                </v-list-item
               >
             </v-list-item-content>
 
@@ -60,11 +59,7 @@
             <v-list-item-content>
               <div class="mb-4">Joaquín Gázquez San Emeterio</div>
               <v-list-item class="amber--text text--darken-1 ml-4">
-                Desarrollador Full Stack en proceso de aprendizaje. Diplomado en
-                Ciencias Empresariales, siempre me ha atraido el mundo de la
-                informática (tanto a nivel de hardware como de software), me
-                lancé a la aventura de aquirir conocimientos de desarrollador de
-                software y aquí estoy dando mis primeros pasos.</v-list-item
+                Desarrollador Full Stack en proceso de aprendizaje. </v-list-item
               >
             </v-list-item-content>
 
