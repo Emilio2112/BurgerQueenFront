@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card class="mt-10">
-      <br>
+      <br />
       <v-text-field
         label="Username"
         placeholder="Username"
@@ -44,7 +44,9 @@
         @click:append="visible = !visible"
       ></v-text-field>
       <v-card-actions>
+        <v-spacer></v-spacer>
         <v-btn
+          id="text"
           elevation="2"
           color="#001D3D"
           class="amber--text text--darken-1"
@@ -58,6 +60,7 @@
       </v-card-actions>
       <v-card-actions>
         <v-btn
+          id="text"
           elevation="2"
           color="#001D3D"
           class="amber--text text--darken-1"
@@ -88,24 +91,30 @@ export default {
   },
   methods: {
     retroceder() {
-      this.$router.go(-1)
+      this.$router.go(-1);
     },
     async updateUsers() {
-    const respond = await api.updateUser(this.newData);
-    if (respond==="error") {
-      console.log("No se pudo actualizar");
-    } else {
-      this.$router.push({ name: "profile" });
-    }
+      const respond = await api.updateUser(this.newData);
+      if (respond === "error") {
+        console.log("No se pudo actualizar");
+      } else {
+        this.$router.push({ name: "profile" });
+      }
+    },
   },
+  async created() {
+    const respond = await api.getUser();
+    this.newData.username = respond.username;
+    this.newData.email = respond.email;
+    this.newData.password = respond.password;
   },
-    async created(){
-      const respond = await api.getUser();
-      this.newData.username= respond.username
-      this.newData.email= respond.email
-      this.newData.password= respond.password
-    }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+#text {
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(16px+1vw);
+  font-weight: bold;
+}
+</style>
