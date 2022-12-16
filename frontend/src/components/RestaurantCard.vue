@@ -6,14 +6,14 @@
       src="https://just-eat-prod-eu-res.cloudinary.com/image/upload/c_fill,f_auto,q_auto,w_1200,h_630,d_es:cuisines:hamburguesas-3.jpg/v1/es/restaurants/56273.jpg"
     >
       <div class="back">
-        <v-card-title>{{ restaurant.name }}</v-card-title>
+        <v-card-title id="text">{{ restaurant.name }}</v-card-title>
       </div>
     </v-img>
 
-    <v-card-subtitle class="pb-0"> {{ restaurant.location }} </v-card-subtitle>
+    <v-card-subtitle id="text" class="pb-0"> {{ restaurant.location }} </v-card-subtitle>
 
-    <v-card-text class="text--primary">
-      <div>{{ restaurant.address }}</div>
+    <v-card-text id="text" class="text--primary">
+      <div class="text-truncate">{{ restaurant.address }}</div>
 
       <div>{{ restaurant.phone }}</div>
 
@@ -23,8 +23,12 @@
     <v-card-actions>
       <v-spacer />
       <!-- Hacemos que el link coja directamente el id del restaurante -->
-      <RouterLink :to="{ path: `/restaurant/${restaurant._id.toString()}` }" style="text-decoration: none;">
+      <RouterLink
+        :to="{ path: `/restaurant/${restaurant._id.toString()}` }"
+        style="text-decoration: none"
+      >
         <v-btn
+          id="text"
           elevation="2"
           color="#001D3D"
           class="amber--text text--darken-1"
@@ -50,6 +54,11 @@ export default {
 </script>
 
 <style scoped>
+#text {
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(16px+1vw);
+  font-weight: bold;
+}
 .back {
   background-color: rgba(53, 52, 52, 0.5);
 }

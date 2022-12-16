@@ -2,7 +2,7 @@
   <v-row>
     <v-col cols="12" sm="10" md="6" class="mx-auto">
       <v-card class="pa-4">
-        <v-card-title>Login</v-card-title>
+        <v-card-title id="text">Login</v-card-title>
         <v-text-field
           label="Email"
           placeholder="Email"
@@ -26,12 +26,14 @@
         ></v-text-field>
         <v-card-actions>
           <v-btn
+            id="text"
             elevation="2"
             color="#001D3D"
             class="amber--text text--darken-1"
             rounded
             dark
-            @click="userLogin"
+            @click.prevent="userLogin"
+            @keydown.enter="userLogin"
           >
             <v-icon color="#FFC300"> mdi-check </v-icon>
             Aceptar
@@ -40,6 +42,7 @@
 
           <RouterLink :to="{ name: 'signup' }" style="text-decoration: none">
             <v-btn
+              id="text"
               elevation="2"
               color="#001D3D"
               class="amber--text text--darken-1"
@@ -53,6 +56,7 @@
         </v-card-actions>
         <v-card-actions>
           <v-btn
+            id="text"
             elevation="2"
             color="#001D3D"
             class="amber--text text--darken-1"
@@ -76,11 +80,10 @@ import { useAuthStore } from "@/stores/store";
 export default {
   data() {
     return {
-      
       visible: false,
       email: "",
       password: "",
-      error:"",
+      error: "",
 
       authStore: useAuthStore(),
     };
@@ -98,14 +101,18 @@ export default {
         this.authStore.login(respond.token, respond.email);
         this.$router.push({ name: "home" });
       }
-
     },
     retroceder() {
       this.$router.go(-1);
     },
   },
 };
-
 </script>
 
-<style scoped></style>
+<style scoped>
+#text {
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(16px+1vw);
+  font-weight: bold;
+}
+</style>

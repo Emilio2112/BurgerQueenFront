@@ -6,33 +6,40 @@
       :src="burger.photo"
     >
       <div class="back">
-        <v-card-title>{{ burger.name }}</v-card-title>
+        <v-card-title id="text">{{ burger.name }}</v-card-title>
       </div>
     </v-img>
 
-    <v-card-subtitle class="pb-0"> {{ burger.style }} </v-card-subtitle>
+    <v-card-subtitle class="pb-0" id="text">
+      {{ burger.style }}
+    </v-card-subtitle>
 
-    <v-card-text class="text--primary">
-      <div>{{ getRestName }}</div>
+    <v-card-text id="text" class="text--primary">
+      <div >{{ getRestName }}</div>
 
-      <div>
+      <div class="text-truncate">
         {{ burger.description }}
       </div>
     </v-card-text>
 
     <v-card-actions>
       <v-spacer />
-      <RouterLink :to="{ path: `/burger/${burger._id}` }" style="text-decoration: none;">
-      <v-btn
-        elevation="2"
-        color="#001D3D"
-        class="amber--text text--darken-1"
-        rounded
-        dark
+      <RouterLink
+        :to="{ path: `/burger/${burger._id}` }"
+        style="text-decoration: none"
       >
-        <v-icon color="#FFC300" class="mr-1"> mdi-hamburger</v-icon>
-        leer más
-      </v-btn></RouterLink>
+        <v-btn
+          id="text"
+          elevation="2"
+          color="#001D3D"
+          class="amber--text text--darken-1"
+          rounded
+          dark
+        >
+          <v-icon color="#FFC300" class="mr-1"> mdi-hamburger</v-icon>
+          leer más
+        </v-btn></RouterLink
+      >
     </v-card-actions>
   </v-card>
 </template>
@@ -70,6 +77,11 @@ export default {
 </script>
 
 <style scoped>
+#text {
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(16px+1vw);
+  font-weight: bold;
+}
 .back {
   background-color: rgba(53, 52, 52, 0.5);
 }

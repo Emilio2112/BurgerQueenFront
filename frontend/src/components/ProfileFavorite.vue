@@ -1,25 +1,25 @@
 <template>
-
-    <v-card class="mx-auto" max-width="344" outlined color="#001D3D">
+<v-col cols="12">
+    <v-card class="mx-auto" outlined color="#001D3D" :to="{ path: `/burger/${fav._id}` }">
       <div>
-        <v-list-item three-line>
+        <v-list-item>
           <v-list-item-content class="text-h9 mb-1 amber--text">
-            <div class="text-overline mb-4">
-              <v-card-title>
+            <div>
+              <v-card-title id="text">
                 {{ fav.name }}
               </v-card-title>
-              <v-card-text>
+              <v-card-text id="text">
                 {{ fav.restaurant.name }}
               </v-card-text>
             </div>
           </v-list-item-content>
-          <v-list-item-avatar tile size="80" color="grey">
+          <v-list-item-avatar size="80" color="grey">
             <v-img :src="fav.photo"> </v-img>
           </v-list-item-avatar>
         </v-list-item>
       </div>
     </v-card>
-
+  </v-col>
 </template>
 
 <script>
@@ -44,4 +44,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+#text {
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(16px+1vw);
+  font-weight: bold;
+}
+</style>

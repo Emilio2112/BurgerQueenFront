@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card class="mt-10">
-      <br>
+      <br />
       <v-text-field
         label="Username"
         placeholder="Username"
@@ -20,31 +20,11 @@
         dense
         v-model="newData.email"
       ></v-text-field>
-      <v-text-field
-        label="Password"
-        :type="visible ? 'text' : 'password'"
-        placeholder="Password"
-        filled
-        rounded
-        dense
-        aria-required="true"
-        :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
-        @click:append="visible = !visible"
-        v-model="newData.password"
-      ></v-text-field>
-      <v-text-field
-        label="Confirmar Password"
-        :type="visible ? 'text' : 'password'"
-        placeholder="Password"
-        filled
-        rounded
-        dense
-        aria-required="true"
-        :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
-        @click:append="visible = !visible"
-      ></v-text-field>
       <v-card-actions>
+        <v-spacer></v-spacer>
         <v-btn
+          id="text"
+
           elevation="2"
           color="#001D3D"
           class="amber--text text--darken-1"
@@ -54,10 +34,12 @@
         >
           <v-icon color="#FFC300"> mdi-check </v-icon>
           Aceptar
+
         </v-btn>
       </v-card-actions>
       <v-card-actions>
         <v-btn
+          id="text"
           elevation="2"
           color="#001D3D"
           class="amber--text text--darken-1"
@@ -70,42 +52,63 @@
         </v-btn>
       </v-card-actions>
     </v-card>
+
   </div>
 </template>
 
 <script>
 import api from "@/services/api";
+import PopUpVue from "@/components/PopUp.vue";
+
 export default {
+  components: {
+    PopUpVue,
+  },
   data() {
     return {
       visible: false,
       newData: {
         username: "",
         email: "",
-        password: "",
       },
     };
   },
   methods: {
     retroceder() {
-      this.$router.go(-1)
+      this.$router.go(-1);
     },
     async updateUsers() {
-    const respond = await api.updateUser(this.newData);
-    if (respond==="error") {
-      console.log("No se pudo actualizar");
-    } else {
-      this.$router.push({ name: "profile" });
-    }
+    
+      if (this.newData.username && this.newData.email) {
+        const respond = await api.updateUser(this.newData);
+      if (respond === "error") {
+        console.log("No se pudo actualizar");
+      } else {
+        this.$router.push({ name: "profile" });
+      }
+        }
+      if (!this.newData.username) {
+        alert('Name required.');
+      }
+      if (!this.newData.email) {
+        alert('Email required.');
+      }
+    },
+   
   },
+  async created() {
+    const respond = await api.getUser();
+    this.newData.username = respond.username;
+    this.newData.email = respond.email;
+
   },
-    async created(){
-      const respond = await api.getUser();
-      this.newData.username= respond.username
-      this.newData.email= respond.email
-      this.newData.password= respond.password
-    }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+#text {
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(16px+1vw);
+  font-weight: bold;
+}
+</style>

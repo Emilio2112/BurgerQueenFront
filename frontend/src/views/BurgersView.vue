@@ -44,6 +44,7 @@
 
     <v-card-actions>
       <v-btn
+        id="text"
         elevation="2"
         color="#001D3D"
         class="amber--text text--darken-1 ml-4 mt-2"
@@ -94,6 +95,11 @@ export default {
 </script>
 
 <style scoped>
+#text {
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(16px+1vw);
+  font-weight: bold;
+}
 .down {
   width: 200px;
   text-align: center;

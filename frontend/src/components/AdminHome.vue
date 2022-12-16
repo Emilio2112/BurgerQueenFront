@@ -1,12 +1,17 @@
 <template>
   <v-col cols="6" class="mt-10 mx-auto">
       Hoy es:  {{getDate}}
+      <ImageUploadVue/>
 
   </v-col>
 </template>
 
 <script>
+import ImageUploadVue from './ImageUpload.vue'
   export default {
+    components: {
+      ImageUploadVue
+    },
     data () {
       return {
         date: "",

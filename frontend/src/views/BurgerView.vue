@@ -8,12 +8,9 @@
       ></v-progress-linear>
     </template>
 
-    <v-img
-      height="250"
-      :src="burger.photo"
-    ></v-img>
+    <v-img height="250" :src="burger.photo"></v-img>
 
-    <v-card-title
+    <v-card-title id="text"
       >{{ burger.name }}
       <v-spacer />
       <v-btn
@@ -29,7 +26,7 @@
         <v-icon>mdi-heart</v-icon>
       </v-btn>
     </v-card-title>
-    <v-card-subtitle>
+    <v-card-subtitle id="text">
       {{ burger.style }}
     </v-card-subtitle>
 
@@ -37,20 +34,20 @@
       <v-row class="mx-0"> </v-row>
 
       <div class="my-4 text-subtitle-1">
-        <v-btn class="mx-1" fab dark small color="amber darken-1">
+        <v-btn  class="mx-1" fab dark small color="amber darken-1">
           <v-icon dark> mdi-silverware-fork-knife </v-icon>
         </v-btn>
-        {{ getRestName }}
+        <v-sheet id="text"> {{ getRestName }}</v-sheet>
       </div>
 
-      <div>
+      <div id="text">
         {{ burger.description }}
       </div>
     </v-card-text>
 
     <v-divider class="mx-4"></v-divider>
     <v-card-text>
-      <v-card-title>Puntuación</v-card-title>
+      <v-card-title id="text">Puntuación</v-card-title>
 
       <v-rating
         :value="burger.rating"
@@ -60,11 +57,12 @@
         half-increments
         x-large
       ></v-rating>
-      <div class="grey--text ms-4">{{ burger.rating }}</div>
+      <div id="text" class="grey--text ms-4">{{ burger.rating }}</div>
     </v-card-text>
 
     <v-card-actions>
       <v-btn
+        id="text"
         elevation="2"
         color="#001D3D"
         class="amber--text text--darken-1 ml-4"
@@ -77,6 +75,7 @@
       </v-btn>
       <v-spacer />
       <v-btn
+        id="text"
         elevation="2"
         color="#001D3D"
         class="amber--text text--darken-1"
@@ -147,4 +146,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+#text {
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(16px+1vw);
+  font-weight: bold;
+}
+</style>

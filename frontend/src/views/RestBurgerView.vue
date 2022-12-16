@@ -3,7 +3,7 @@
     <v-row>
       <v-col>
         <v-img
-        position="top"
+          position="top"
           class="amber--text text--darken-1 align-end"
           height="200px"
           src="https://i.pinimg.com/736x/5f/93/03/5f9303c8a1127f572b061c7632bb3d77--restaurant-layout-burger-restaurant.jpg"
@@ -11,7 +11,7 @@
         <div>
           <v-expansion-panels class="back" tile>
             <v-expansion-panel v-for="(item, i) in 1" :key="i">
-              <v-expansion-panel-header class="text-h5 mb-1 font-weight-bold">
+              <v-expansion-panel-header id="text">
                 {{ restaurants.name }}
               </v-expansion-panel-header>
               <v-expansion-panel-content>
@@ -26,30 +26,32 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col 
-      cols="12"
+      <v-col
+        cols="12"
         sm="6"
         md="4"
         v-for="(burger, idx) in burgers"
-        :key="idx">
-            <BurgerCard :burger="burger" />
+        :key="idx"
+      >
+        <BurgerCard :burger="burger" />
       </v-col>
     </v-row>
     <v-row>
       <v-col>
-          <v-card-actions>
-            <v-btn
-              elevation="2"
-              color="#001D3D"
-              class="amber--text text--darken-1 ml-4"
-              rounded
-              dark
-              @click="retroceder()"
-            >
-              <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
-              Volver
-            </v-btn>
-          </v-card-actions>
+        <v-card-actions>
+          <v-btn
+            id="text"
+            elevation="2"
+            color="#001D3D"
+            class="amber--text text--darken-1 ml-4"
+            rounded
+            dark
+            @click="retroceder()"
+          >
+            <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
+            Volver
+          </v-btn>
+        </v-card-actions>
       </v-col>
     </v-row>
   </v-container>
@@ -89,6 +91,11 @@ export default {
 </script>
 
 <style scoped>
+#text {
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(16px+1vw);
+  font-weight: bold;
+}
 .back {
   background-color: rgba(53, 52, 52, 0.5);
 }
