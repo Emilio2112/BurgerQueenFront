@@ -1,7 +1,7 @@
 <template>
   <div>
-<
-    <v-card class="mt-10">
+
+    <v-card class="mt-10" >
       <br />
       <v-text-field
         label="Username"
@@ -20,29 +20,6 @@
         aria-required="true"
         dense
         v-model="newData.email"
-      ></v-text-field>
-      <v-text-field
-        label="Password"
-        :type="visible ? 'text' : 'password'"
-        placeholder="Password"
-        filled
-        rounded
-        dense
-        aria-required="true"
-        :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
-        @click:append="visible = !visible"
-        v-model="newData.password"
-      ></v-text-field>
-      <v-text-field
-        label="Confirmar Password"
-        :type="visible ? 'text' : 'password'"
-        placeholder="Password"
-        filled
-        rounded
-        dense
-        aria-required="true"
-        :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
-        @click:append="visible = !visible"
       ></v-text-field>
       <v-card-actions>
         <v-spacer></v-spacer>
@@ -94,7 +71,6 @@ export default {
       newData: {
         username: "",
         email: "",
-        password: "",
       },
     };
   },
@@ -103,13 +79,23 @@ export default {
       this.$router.go(-1);
     },
     async updateUsers() {
-      const respond = await api.updateUser(this.newData);
+    
+      if (this.newData.username && this.newData.email) {
+        const respond = await api.updateUser(this.newData);
       if (respond === "error") {
         console.log("No se pudo actualizar");
       } else {
         this.$router.push({ name: "profile" });
       }
+        }
+      if (!this.newData.username) {
+        alert('Name required.');
+      }
+      if (!this.newData.email) {
+        alert('Email required.');
+      }
     },
+   
   },
   async created() {
     const respond = await api.getUser();
