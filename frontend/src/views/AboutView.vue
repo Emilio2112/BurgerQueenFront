@@ -5,7 +5,7 @@
         cols="12"
         sm="6"
         md="4">
-        <v-card  max-width="500" color="#001D3D" class="mb-10 mx-auto">
+        <v-card width="360px" min-width="360px" color="#001D3D" class="mb-10 mx-auto">
           <v-list-item class="amber--text text--darken-1 ml-4">
             <v-list-item-content>
               <div class="mb-4">Javier Cabrera</div>
@@ -41,7 +41,12 @@
             </v-btn>
           </v-card-actions>
         </v-card>
-        <v-card  max-width="500" color="#001D3D" class="mb-10 mx-auto">
+      </v-col>
+        <v-col 
+        cols="12"
+        sm="6"
+        md="4">
+        <v-card width="360px" min-width="360px" color="#001D3D" class="mb-10 mx-auto">
           <v-list-item class="amber--text text--darken-1 ml-4">
             <v-list-item-content>
               <div class="mb-4">Joaquín Gazquez</div>
@@ -75,7 +80,12 @@
             </v-btn>
           </v-card-actions>
         </v-card>
-        <v-card  max-width="500" color="#001D3D" class="mb-10 mx-auto">
+        </v-col>
+        <v-col 
+        cols="12"
+        sm="6"
+        md="4">
+        <v-card width="360px" min-width="360px" color="#001D3D" class="mb-10 mx-auto">
           <v-list-item class="amber--text text--darken-1 ml-4">
             <v-list-item-content>
               <div class="mb-4">Emilio Casado</div>
