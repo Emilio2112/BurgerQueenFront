@@ -1,7 +1,49 @@
 <template>
   <div style="margin-top: 50px">
-    about page
+    <template>
+  <v-card
+    class="mx-auto"
+    max-width="700"
+    outlined
+  >
+    <v-list-item three-line>
+      <v-list-item-content>
+        <div class="text-overline mb-4">
+          Javier Cabrera
+        </div>
+
+        <v-list-item-subtitle>Soy un desarrollador web Junior en proceso de aprendizaje.</v-list-item-subtitle>
+      </v-list-item-content>
+
+      <v-list-item-avatar
+        tile
+        size="80"
+        color="grey">
+        
+    </v-list-item-avatar>
+    </v-list-item>
+
     <v-card-actions>
+      <v-btn
+        outlined
+        rounded
+        text
+      >
+        <a href="https://github.com/Tommyscripts">GitHub</a>
+      </v-btn>
+      <v-btn
+        outlined
+        rounded
+        text
+      >
+        <a href="https://www.linkedin.com/in/javierescoz/">Linkedin</a>
+      </v-btn>
+    </v-card-actions>
+  </v-card>
+</template>
+    <v-card-actions>
+
+
       <v-btn
         elevation="2"
         color="#001D3D"

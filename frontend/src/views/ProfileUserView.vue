@@ -39,11 +39,6 @@
         </v-row>
             
         <br>
-    <v-list-item-title class="text-h5 indigo--text text--darken-4">
-      Mis criticas
-    </v-list-item-title>
-
-    <br />
     <v-btn
       elevation="2"
       color="#001D3D"
