@@ -111,40 +111,46 @@ export default {
   },
   methods: {
     setAddRest() {
+      if(!this.restaurant){
       this.restaurant = !this.restaurant
       this.burger = false
       this.home = false
       this.updateRest = false
-      this.admin = false
+      this.admin = false}
 
     },
     setBurger() {
+      if(!this.burger){
       this.burger = !this.burger;
       this.restaurant = false
       this.home = false
       this.updateRest = false
-      this.admin = false
+      this.admin = false}
     },
     setHome() {
+      if(!this.home){
       this.home = !this.home;
       this.restaurant = false
       this.burger = false
       this.updateRest = false
       this.admin = false
+    }
     },
     setUpRest() {
+      if(!this.updateRest){
       this.updateRest = !this.updateRest;
       this.restaurant = false
       this.burger = false
       this.home = false
-      this.admin = false
+      this.admin = false}
     },
     setAdmin() {
+      if(!this.admin){
       this.admin = !this.admin;
       this.restaurant = false
       this.burger = false
       this.home = false
-      this.updateRest = false
+      this.updateRest = false}
     },
   },
   async created() {
