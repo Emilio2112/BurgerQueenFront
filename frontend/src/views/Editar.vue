@@ -1,6 +1,6 @@
 <template>
   <div>
-<
+
     <v-card class="mt-10">
       <br />
       <v-text-field
@@ -20,29 +20,6 @@
         aria-required="true"
         dense
         v-model="newData.email"
-      ></v-text-field>
-      <v-text-field
-        label="Password"
-        :type="visible ? 'text' : 'password'"
-        placeholder="Password"
-        filled
-        rounded
-        dense
-        aria-required="true"
-        :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
-        @click:append="visible = !visible"
-        v-model="newData.password"
-      ></v-text-field>
-      <v-text-field
-        label="Confirmar Password"
-        :type="visible ? 'text' : 'password'"
-        placeholder="Password"
-        filled
-        rounded
-        dense
-        aria-required="true"
-        :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
-        @click:append="visible = !visible"
       ></v-text-field>
       <v-card-actions>
         <v-spacer></v-spacer>
@@ -94,7 +71,7 @@ export default {
       newData: {
         username: "",
         email: "",
-        password: "",
+
       },
     };
   },
@@ -115,7 +92,7 @@ export default {
     const respond = await api.getUser();
     this.newData.username = respond.username;
     this.newData.email = respond.email;
-    this.newData.password = respond.password;
+
   },
 };
 </script>
