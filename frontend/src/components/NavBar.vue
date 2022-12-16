@@ -67,7 +67,7 @@
               Login
             </v-list-item>
           </div>
-          <div v-if="store.isLoggedIn && role === 'admin'">
+          <div v-if="store.isLoggedIn && role === auth">
             <v-list-item
               class="amber--text text--darken-1"
               rounded
@@ -114,6 +114,7 @@ export default {
     group: null,
     store: useAuthStore(),
     role: "",
+    auth: "admin"
   }),
   methods: {
     logout() {
