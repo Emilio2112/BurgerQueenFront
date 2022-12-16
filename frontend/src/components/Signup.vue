@@ -1,6 +1,6 @@
 <template>
   <v-card class="mt-10">
-   <v-card-title>
+   <v-card-title id="text">
     Signup
    </v-card-title>
 
@@ -53,7 +53,9 @@
       @click:append="visible = !visible"
     ></v-text-field>
     <v-card-actions>
+      <v-spacer></v-spacer>
       <v-btn
+      id="text"
         elevation="2"
         color="#001D3D"
         class="amber--text text--darken-1"
@@ -67,6 +69,7 @@
     </v-card-actions>
     <v-card-actions>
       <v-btn
+      id="text"
         elevation="2"
         color="#001D3D"
         class="amber--text text--darken-1"
@@ -126,4 +129,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#text {
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(16px+1vw);
+  font-weight: bold;
+}</style>

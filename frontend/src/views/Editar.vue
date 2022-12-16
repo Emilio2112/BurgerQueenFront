@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <v-card class="mt-10">
       <br />
       <v-text-field
@@ -71,7 +70,6 @@ export default {
       newData: {
         username: "",
         email: "",
-
       },
     };
   },
@@ -80,13 +78,23 @@ export default {
       this.$router.go(-1);
     },
     async updateUsers() {
-      const respond = await api.updateUser(this.newData);
+    
+      if (this.newData.username && this.newData.email) {
+        const respond = await api.updateUser(this.newData);
       if (respond === "error") {
         console.log("No se pudo actualizar");
       } else {
         this.$router.push({ name: "profile" });
       }
+        }
+      if (!this.newData.username) {
+        alert('Name required.');
+      }
+      if (!this.newData.email) {
+        alert('Email required.');
+      }
     },
+   
   },
   async created() {
     const respond = await api.getUser();
