@@ -1,7 +1,7 @@
 <template>
   <div style="margin-top: 50px">
-    <template>
-  <v-card
+    <v-row>
+      <v-card
     class="mx-auto"
     max-width="700"
     color="#001D3D"
@@ -41,11 +41,11 @@
       </v-btn>
     </v-card-actions>
   </v-card>
-</template>
-    <v-card-actions>
+    </v-row>
 
-
-      <v-btn
+  
+  <v-row>
+    <v-btn
         elevation="2"
         color="#001D3D"
         class="amber--text text--darken-1 ml-4"
@@ -56,12 +56,32 @@
         <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
         Volver
       </v-btn>
-    </v-card-actions>
+    <RouterLink
+      :to="{name:'home'}"
+      style="text-decoration: none;"
+      >
+
+    <v-btn
+    elevation="2"
+        color="#001D3D"
+        class="amber--text text--darken-1 ml-4"
+        rounded
+        dark
+        
+      >
+      <v-icon color="#FFC300" class="mr-1"> mdi-home</v-icon>
+        Home
+      </v-btn>
+    </RouterLink>
+  </v-row>
+  
   </div>
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
 export default {
+
   methods: {
     retroceder() {
       this.$router.go(-1)
