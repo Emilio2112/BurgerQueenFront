@@ -1,5 +1,6 @@
 <template>
   <div>
+<
     <v-card class="mt-10">
       <br />
       <v-text-field
@@ -47,6 +48,7 @@
         <v-spacer></v-spacer>
         <v-btn
           id="text"
+
           elevation="2"
           color="#001D3D"
           class="amber--text text--darken-1"
@@ -56,6 +58,7 @@
         >
           <v-icon color="#FFC300"> mdi-check </v-icon>
           Aceptar
+
         </v-btn>
       </v-card-actions>
       <v-card-actions>
@@ -73,12 +76,18 @@
         </v-btn>
       </v-card-actions>
     </v-card>
+
   </div>
 </template>
 
 <script>
 import api from "@/services/api";
+import PopUpVue from "@/components/PopUp.vue";
+
 export default {
+  components: {
+    PopUpVue,
+  },
   data() {
     return {
       visible: false,
