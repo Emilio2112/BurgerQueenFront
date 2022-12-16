@@ -100,7 +100,7 @@ export default {
     const respond = await api.getUser();
     this.newData.username = respond.username;
     this.newData.email = respond.email;
-    this.newData.password = respond.password;
+
   },
 };
 </script>
