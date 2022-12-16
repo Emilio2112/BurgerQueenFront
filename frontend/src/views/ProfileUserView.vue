@@ -37,16 +37,24 @@
         </v-btn>
       </v-row>
     </v-container>
-  <v-container class="mx-auto">
-    <v-row  class="text-h5 indigo--text text--darken-4">
-      <v-sheet id="text">Mis Crush</v-sheet> 
+
+      <v-row class="text-h5 indigo--text text--darken-4 ml-4">
+        <v-col>
+          <v-sheet id="text">Mis Crush</v-sheet>
+        </v-col>
+      </v-row>
+
+    <v-row>
+      <v-col
+        v-for="(favs, idx) in favorites"
+        :key="idx"
+        cols="12"
+        sm="5"
+        md="4"
+      >
+        <ProfileFavorite :fav="favs" />
+      </v-col>
     </v-row>
-</v-container>
-<v-row>
-    <v-col v-for="(favs, idx) in favorites" :key="idx" cols="12" sm="5" md="4">
-      <ProfileFavorite :fav="favs" />
-    </v-col>
-  </v-row>
     <v-container>
       <v-row>
         <v-btn
@@ -82,7 +90,6 @@
       </v-row>
     </v-container>
   </v-container>
-
 </template>
 
 <script>
