@@ -67,7 +67,7 @@
               Login
             </v-list-item>
           </div>
-          <div v-if="rol === auth && store.isLoggedIn">
+          <div v-if="auth === rol && store.isLoggedIn">
             <v-list-item
               class="amber--text text--darken-1"
               rounded
@@ -113,7 +113,7 @@ export default {
     drawer: false,
     group: null,
     store: useAuthStore(),
-    auth: "admin"
+    auth: 'admin'
   }),
   props:{
     rol:String
@@ -121,10 +121,12 @@ export default {
   methods: {
     logout() {
       this.store.logout();
+      this.rol = null
+      console.log(this.rol)
       this.$router.push({ name: "home" });
     },
   },
-
+ 
 };
 </script>
 
