@@ -1,69 +1,54 @@
 <template>
   <div>
-    <v-col cols="12" sm="8" md="6" class="mx-auto">
-      <v-container class="mt-1 pt-5">
-        <v-vcard-title class="px-10">Mis Datos:</v-vcard-title>
-        <v-text-field
-          class="mt-5 px-5"
-          label="Username"
-          placeholder="Username"
-          filled
-          rounded
-          aria-required="true"
-          dense
-          v-model="newData.username"
-        ></v-text-field>
-        <v-text-field
-          class="px-5"
-          label="Email"
-          placeholder="Email"
-          filled
-          rounded
-          aria-required="true"
-          dense
-          v-model="newData.email"
-        ></v-text-field>
-        <v-text-field
-          class="px-5"
-          label="Password"
-          :type="visible ? 'text' : 'password'"
-          placeholder="Password"
-          filled
-          rounded
-          dense
-          aria-required="true"
-          :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
-          @click:append="visible = !visible"
-          v-model="newData.password"
-        ></v-text-field>
-        <v-text-field
-          class="px-5"
-          label="Confirmar Password"
-          :type="visible ? 'text' : 'password'"
-          placeholder="Password"
-          filled
-          rounded
-          dense
-          aria-required="true"
-          :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
-          @click:append="visible = !visible"
-        ></v-text-field>
-        <v-row class="px-9 mt-1">
-          <v-btn
-            elevation="2"
-            color="#001D3D"
-            class="amber--text text--darken-1"
-            rounded
-            dark
-            @click="retroceder()"
-          >
-            <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
-            Volver
-          </v-btn>
-          <v-spacer></v-spacer>
-          <PopUpVue :data="newData" />
-        </v-row>
-        <!--         <v-btn
+<
+    <v-card class="mt-10">
+      <br />
+      <v-text-field
+        label="Username"
+        placeholder="Username"
+        filled
+        rounded
+        aria-required="true"
+        dense
+        v-model="newData.username"
+      ></v-text-field>
+      <v-text-field
+        label="Email"
+        placeholder="Email"
+        filled
+        rounded
+        aria-required="true"
+        dense
+        v-model="newData.email"
+      ></v-text-field>
+      <v-text-field
+        label="Password"
+        :type="visible ? 'text' : 'password'"
+        placeholder="Password"
+        filled
+        rounded
+        dense
+        aria-required="true"
+        :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
+        @click:append="visible = !visible"
+        v-model="newData.password"
+      ></v-text-field>
+      <v-text-field
+        label="Confirmar Password"
+        :type="visible ? 'text' : 'password'"
+        placeholder="Password"
+        filled
+        rounded
+        dense
+        aria-required="true"
+        :append-icon="visible ? 'mdi-eye' : 'mdi-eye-off'"
+        @click:append="visible = !visible"
+      ></v-text-field>
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn
+          id="text"
+
           elevation="2"
           color="#001D3D"
           class="amber--text text--darken-1"
@@ -73,9 +58,25 @@
         >
           <v-icon color="#FFC300"> mdi-check </v-icon>
           Aceptar
-        </v-btn> -->
-      </v-container>
-    </v-col>
+
+        </v-btn>
+      </v-card-actions>
+      <v-card-actions>
+        <v-btn
+          id="text"
+          elevation="2"
+          color="#001D3D"
+          class="amber--text text--darken-1"
+          rounded
+          dark
+          @click="retroceder()"
+        >
+          <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
+          Volver
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+
   </div>
 </template>
 
@@ -119,4 +120,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+#text {
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(16px+1vw);
+  font-weight: bold;
+}
+</style>
