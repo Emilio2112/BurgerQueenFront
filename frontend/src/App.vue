@@ -2,7 +2,7 @@
   <v-app id="text">
     <v-main>
       <v-row>
-        <v-col cols="12"> <nav-bar :rol="role"/></v-col>
+        <v-col cols="12"> <nav-bar/></v-col>
       </v-row>
       <v-row
         ><v-col cols="12"> <RouterView /></v-col>
@@ -28,14 +28,9 @@ export default {
   },
   data(){
     return{
-    role: ""
+
   }
 },
-  async beforeCreate() {
-    const rol = await api.getUser();
-    console.log(rol.role)
-    this.role = rol.role;
-  },
 };
 </script>
 

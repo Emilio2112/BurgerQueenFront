@@ -1,6 +1,7 @@
 <template>
   <div>
-    <v-card class="mt-10">
+
+    <v-card class="">
       <br />
       <v-text-field
         label="Username"
