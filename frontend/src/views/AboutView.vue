@@ -13,11 +13,11 @@
               <div class="mb-4">Javier Cabrera</div>
 
               <v-list-item class="amber--text text--darken-1"
-                >Técnico Superior de Sistemas y Telecomunicaciones, usuario habitual de software,
-                 tanto de uso diario como de juegos, ahora adquiriendo conocimientos y experimentando
-                  en el lado del desarrollo de aplicaciones. <br />
-                </v-list-item
-              >
+                >Técnico Superior de Sistemas y Telecomunicaciones, usuario
+                habitual de software, tanto de uso diario como de juegos, ahora
+                adquiriendo conocimientos y experimentando en el lado del
+                desarrollo de aplicaciones. <br />
+              </v-list-item>
             </v-list-item-content>
 
             <v-list-item-avatar tile size="100" color="grey">
@@ -61,9 +61,10 @@
             <v-list-item-content>
               <div class="mb-4">Joaquín Gázquez San Emeterio</div>
               <v-list-item class="amber--text text--darken-1 ml-4">
-                Diplomado en CCEE, entusiasta de la tecnolgía, empezando 
-                en el mundo del desarrollo y programación. </v-list-item
-              >
+                Diplomado en CCEE, entusiasta de la tecnolgía, empezando en el
+                mundo del desarrollo y programación. Ilusionado en el comienzo de 
+                este nuevo camino.
+              </v-list-item>
             </v-list-item-content>
 
             <v-list-item-avatar tile size="100" color="grey">
@@ -111,10 +112,10 @@
               <div class="mb-4">Emilio Casado</div>
 
               <v-list-item class="amber--text text--darken-1"
-                >Técnico superior en Admón. y Finanzas. Después de 
-                probar varios trabajos, caí en las redes del desarrollo 
-                de aplicaciones, entusiasmado e ilusionado con el futuro
-                 que me depara este nuevo mundo. .</v-list-item
+                >Técnico superior en Admón. y Finanzas. Después de probar varios
+                trabajos, caí en las redes del desarrollo de aplicaciones,
+                entusiasmado con el futuro que me depara este nuevo
+                mundo.</v-list-item
               >
             </v-list-item-content>
 
@@ -194,7 +195,6 @@ export default {
 <style scoped>
 #text {
   font-family: "Montserrat", sans-serif;
-   
   font-weight: bold;
 }
 </style>
