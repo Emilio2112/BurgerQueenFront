@@ -84,12 +84,13 @@ export default {
       email: "",
       password: "",
       error: "",
-
+      role:'',
       authStore: useAuthStore(),
     };
   },
   methods: {
     async userLogin() {
+      console.log(this.role)
       const user = {
         email: this.email,
         password: this.password,
@@ -99,13 +100,21 @@ export default {
         alert("password or email wrong");
       } else {
         this.authStore.login(respond.token, respond.email);
+        const rol = await api.getUser()
+        this.role = rol.role
+        this.authStore.roleCheck(this.role)
         this.$router.push({ name: "home" });
       }
+      
+      
     },
     retroceder() {
       this.$router.go(-1);
     },
   },
+  async beforeCreate() {
+
+  }
 };
 </script>
 

@@ -40,10 +40,5 @@ export default {
     MvbMonthVue,
     RestaurantCard,
   },
-  async beforeCreate() {
-    const rol = await api.getUser();
-    console.log(rol.role)
-    this.role = rol.role;
-  },
 };
 </script>
