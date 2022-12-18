@@ -1,6 +1,7 @@
 <template>
   <div>
-    <v-card class="mt-10">
+
+    <v-card class="">
       <br />
       <v-text-field
         label="Username"
@@ -108,7 +109,7 @@ export default {
 <style scoped>
 #text {
   font-family: "Montserrat", sans-serif;
-  font-size: calc(16px+1vw);
+   
   font-weight: bold;
 }
 </style>

@@ -10,7 +10,7 @@
     <v-row>
       <v-col cols="12" md="6" lg="4" class="mx-auto">
         <v-img
-          src="https://scontent.fsvq4-1.fna.fbcdn.net/v/t39.30808-6/302141399_504624418337266_2543582150074936248_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=s4-qaz0FwhcAX9zU2vc&tn=HtKZONxORLSxluHn&_nc_ht=scontent.fsvq4-1.fna&oh=00_AfAoGCklXZJQnug9Bn4GELhOABvRsyM7DYe86S1ctThHGQ&oe=639BF5FD"
+          src="@/img/pulp fiction.jpg"
         >
         </v-img>
       </v-col>
