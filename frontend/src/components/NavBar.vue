@@ -67,7 +67,7 @@
               Login
             </v-list-item>
           </div>
-          <div v-if="rol === auth && store.isLoggedIn">
+          <div v-if="store.isLoggedIn && store.userRole === 'admin'">
             <v-list-item
               class="amber--text text--darken-1"
               rounded
@@ -106,25 +106,21 @@
 <script>
 import { RouterLink } from "vue-router";
 import { useAuthStore } from "@/stores/store";
-import api from "@/services/api";
 
 export default {
   data: () => ({
     drawer: false,
     group: null,
     store: useAuthStore(),
-    auth: "admin"
+    auth:''
   }),
-  props:{
-    rol:String
-  },
   methods: {
     logout() {
       this.store.logout();
+      this.store.roleCheck(null)
       this.$router.push({ name: "home" });
     },
   },
-
 };
 </script>
 

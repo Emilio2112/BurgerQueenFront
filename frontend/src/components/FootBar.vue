@@ -29,7 +29,6 @@ export default {
 <style scoped>
 #text {
   font-family: "Montserrat", sans-serif;
-  font-size: calc(16px+1vw);
   font-weight: bold;
 }
 </style>
