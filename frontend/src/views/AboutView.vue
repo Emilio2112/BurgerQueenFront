@@ -13,7 +13,9 @@
               <div class="mb-4">Javier Cabrera</div>
 
               <v-list-item class="amber--text text--darken-1"
-                >Desarrollador web Junior en proceso de aprendizaje. <br />
+                >Técnico Superior de Sistemas y Telecomunicaciones, usuario habitual de software,
+                 tanto de uso diario como de juegos, ahora adquiriendo conocimientos y experimentando
+                  en el lado del desarrollo de aplicaciones. <br />
                 </v-list-item
               >
             </v-list-item-content>
@@ -59,7 +61,8 @@
             <v-list-item-content>
               <div class="mb-4">Joaquín Gázquez San Emeterio</div>
               <v-list-item class="amber--text text--darken-1 ml-4">
-                Desarrollador Full Stack en proceso de aprendizaje. </v-list-item
+                Diplomado en CCEE, entusiasta de la tecnolgía, empezando 
+                en el mundo del desarrollo y programación. </v-list-item
               >
             </v-list-item-content>
 
@@ -108,7 +111,10 @@
               <div class="mb-4">Emilio Casado</div>
 
               <v-list-item class="amber--text text--darken-1"
-                >Desarrollador Full Stack en proceso de aprendizaje.</v-list-item
+                >Técnico superior en Admón. y Finanzas. Después de 
+                probar varios trabajos, caí en las redes del desarrollo 
+                de aplicaciones, entusiasmado e ilusionado con el futuro
+                 que me depara este nuevo mundo. .</v-list-item
               >
             </v-list-item-content>
 
