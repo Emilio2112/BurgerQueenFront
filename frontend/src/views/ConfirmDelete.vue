@@ -55,15 +55,18 @@
 
 <script>
 import api from "@/services/api";
+import { useAuthStore } from "@/stores/store";
 export default {
   data: () => ({
-    api: api(),
+    store: useAuthStore()
   }),
   methods: {
     retroceder() {
       this.$router.go(-1);
     },
-    async deleteUser() {
+    async deleteUser() {    
+      this.store.logout()
+      this.store.roleCheck(null)
       await api.deleteUser();
       this.$router.push({ name: "despedida" });
     },
