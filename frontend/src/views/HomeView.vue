@@ -1,11 +1,13 @@
 <template>
   <v-app>
-    
+    <div>
       <v-row>
         <v-col cols="12">
           <hello-world />
         </v-col>
       </v-row>
+    </div>
+    <v-container>
       <v-row>
         <v-col cols="12" sm="6" md="4">
           <queen-card-vue />
@@ -17,7 +19,7 @@
           <mvb-month-vue />
         </v-col>
       </v-row>
-
+    </v-container>
     <!--     <RestaurantCard /> -->
   </v-app>
 </template>
