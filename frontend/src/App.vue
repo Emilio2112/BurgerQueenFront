@@ -1,22 +1,28 @@
 <template>
   <v-app id="text">
     <v-main>
-      <v-row>
-        <v-col cols="12"> <nav-bar/></v-col>
-      </v-row>
-      <v-row
-        ><v-col cols="12"> <RouterView /></v-col>
-      </v-row>
-      <v-row>
-        <v-col cols="12"><Footer></Footer></v-col>
-      </v-row>
+      <v-container>
+        <v-row>
+          <v-col cols="12"> <nav-bar /></v-col>
+        </v-row>
+      </v-container>
+      <v-container>
+        <v-row
+          ><v-col cols="12"> <RouterView /></v-col>
+        </v-row>
+      </v-container>
+      <v-container>
+        <v-row>
+          <v-col cols="12"><Footer></Footer></v-col>
+        </v-row>
+      </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
 import { RouterLink, RouterView } from "vue-router";
-import api from './services/api'
+import api from "./services/api";
 import NavBar from "./components/NavBar.vue";
 import Footer from "./components/FootBar.vue";
 
@@ -26,11 +32,9 @@ export default {
     NavBar,
     Footer,
   },
-  data(){
-    return{
-
-  }
-},
+  data() {
+    return {};
+  },
 };
 </script>
 
