@@ -4,24 +4,10 @@
       <v-col cols="12">
         <v-sheet elevation="10" class="py-4 px-1">
           <v-chip-group mandatory active-class="amber--text text--darken-1"  show-arrows >
-            <v-chip  @click="filterBurgers('Normal')">
-              Normal
+            <v-chip v-for="(tag, idx) in tags" :key="idx" @click="filterBurgers(`${tag}`)">
+              {{tag}}
             </v-chip>
-            <v-chip @click="filterBurgers('Cheese Burger')">
-              Cheese Burger
-            </v-chip>
-            <v-chip @click="filterBurgers('Pollo')">
-              Pollo
-            </v-chip>
-            <v-chip @click="filterBurgers('Veggie')">
-              Veggie
-            </v-chip>
-            <v-chip @click="filterBurgers('Smash')">
-              Smash
-            </v-chip>
-            <v-chip @click="filterBurgers('Gourmet')">
-              Gourmet
-            </v-chip>
+
             <v-chip @click="allBurgers">
               Todas
             </v-chip>
@@ -69,7 +55,7 @@ export default {
   data() {
     return {
       burgers: {},
-      tags: ["Todas","Normal", "Cheese Burger", "Pollo", "Veggie", "Smash", "Gourmet"],
+      tags: ["Normal", "Cheese Burger", "Pollo", "Veggie", "Smash", "Gourmet"],
 
     };
   },
