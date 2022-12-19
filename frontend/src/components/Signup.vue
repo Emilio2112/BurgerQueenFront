@@ -1,5 +1,6 @@
 <template>
-  <v-card class="mt-10">
+  <v-col cols="12" sm="8" md="6" class="mx-auto">
+  <v-card class="px-2" >
    <v-card-title id="text">
     Signup
    </v-card-title>
@@ -77,11 +78,12 @@
         dark
         @click="retroceder()"
       >
-        <v-icon color="#FFC300" class="mr-1"> mdi-arrow-left</v-icon>
+        <v-icon color="#FFC300" class=""> mdi-arrow-left</v-icon>
         Volver
       </v-btn>
     </v-card-actions>
   </v-card>
+  </v-col>
 </template>
 
 <script>
